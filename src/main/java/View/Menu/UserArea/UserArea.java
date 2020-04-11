@@ -1,4 +1,6 @@
-package View.Menu;
+package View.Menu.UserArea;
+
+import View.Menu.Menu;
 
 public class UserArea extends Menu {
     public UserArea(Menu parentMenu) {
