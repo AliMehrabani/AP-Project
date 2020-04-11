@@ -5,6 +5,7 @@ import Controller.Controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public abstract class Menu {
     private String name;
@@ -20,7 +21,22 @@ public abstract class Menu {
         allMenus.add(this);
     }
 
+    public static void setController(Controller controller) {
+        Menu.controller = controller;
+    }
+
+    public static void setScanner(Scanner scanner) {
+        Menu.scanner = scanner;
+    }
+
     public void setSubMenus(HashMap<String, Menu> subMenus) {
         this.subMenus = subMenus;
+    }
+
+    public void run() {
+        while (true) {
+            String command = scanner.nextLine().trim();
+
+        }
     }
 }
