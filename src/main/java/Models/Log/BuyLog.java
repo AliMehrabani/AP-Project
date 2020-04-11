@@ -22,4 +22,28 @@ public class BuyLog extends Log {
         this.logId = logId;
         this.logDate = logDate;
     }
+
+    private void setReceiveStatus(ReceiveStatus newReceiveStatus) {
+        this.receiveStatus = newReceiveStatus;
+    }
+
+    public double getPaidAmount() {
+        return paidAmount;
+    }
+
+    public int getSaleCodeApplied() {
+        return saleCodeApplied;
+    }
+
+    public ArrayList<Product> getBoughtProduct() {
+        return boughtProduct;
+    }
+
+    public String getSellerName() {
+        return sellerName;
+    }
+
+    public ReceiveStatus getReceiveStatus() {
+        return receiveStatus;
+    }
 }
