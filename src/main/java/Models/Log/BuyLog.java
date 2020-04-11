@@ -10,7 +10,7 @@ public class BuyLog extends Log {
     private int saleCodeApplied;
     private ArrayList<Product> boughtProduct = new ArrayList<Product>();
     private String sellerName;
-    private ReceiveStatus receiveStatus ;
+    private ReceiveStatus receiveStatus;
 
     public BuyLog(double paidAmount, int saleCodeApplied, ArrayList<Product> boughtProduct,
                   String sellerName, ReceiveStatus receiveStatus, long logId, Date logDate) {
@@ -19,7 +19,7 @@ public class BuyLog extends Log {
         this.boughtProduct = boughtProduct;
         this.sellerName = sellerName;
         this.receiveStatus = receiveStatus;
-        this.logId=logId;
-        this.logDate=logDate;
+        this.logId = logId;
+        this.logDate = logDate;
     }
 }
