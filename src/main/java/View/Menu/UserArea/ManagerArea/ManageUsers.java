@@ -39,7 +39,37 @@ public class ManageUsers extends Menu {
 
             @Override
             public void run(String lastCommand) {
-                
+                controller.deleteUser(lastCommand);
+                this.parentMenu.run("");
+            }
+        };
+    }
+
+    private Menu getChangeUserType() {
+        return new Menu("Change User Type", this) {
+            @Override
+            public String getCommandKey(String command) {
+                return null;
+            }
+
+            @Override
+            public void run(String lastCommand) {
+                controller.changeUserType("", "");
+                this.parentMenu.run("");
+            }
+        };
+    }
+
+    private Menu getCreateManagerProfile() {
+        return new Menu("Create Manager Profile", this) {
+            @Override
+            public String getCommandKey(String command) {
+                return null;
+            }
+
+            @Override
+            public void run(String lastCommand) {
+                controller.createManagerProfile(new String[3]);
             }
         };
     }
