@@ -8,7 +8,7 @@ import Models.User.Guest;
 import Models.User.User;
 
 public class Controller {
-    private static ArrayList<Product> allProduct;
+    protected static ArrayList<Product> allProduct = new ArrayList<>();
     private User currentUser;
 
     public Controller() {
@@ -33,6 +33,23 @@ public class Controller {
 
     public String loginAccount(String username, String password) {
         User.getUserByUsername("");
+        return "";
+    }
+
+    public boolean isPasswordCorrect(String password) {
+        return false;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public void editField(String field, String newContent) {
+        currentUser.setFirstName(newContent);
+        currentUser.setLastName(newContent);
+    }
+
+    public String viewUser(String username) {
         return "";
     }
 }

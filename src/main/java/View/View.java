@@ -13,6 +13,6 @@ public class View {
     }
 
     public static void run() {
-        new MainMenu().run();
+        new MainMenu().run("");
     }
 }

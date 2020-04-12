@@ -64,7 +64,7 @@ public abstract class Menu {
 
     public abstract String getCommandKey(String command);
 
-    public void run() {
+    public void run(String lastCommand) {
         String command = scanner.nextLine().trim();
         Menu nextMenu = null;
         if (getCommandKey(command).equals("invalid")) {
@@ -77,6 +77,6 @@ public abstract class Menu {
         } else {
             nextMenu = this.subMenus.get(getCommandKey(command));
         }
-        nextMenu.run();
+        nextMenu.run(command);
     }
 }

@@ -1,6 +1,9 @@
 package View.Menu.UserArea;
 
 import View.Menu.Menu;
+import View.Menu.UserArea.CostumerArea.CostumerArea;
+import View.Menu.UserArea.ManagerArea.ManagerArea;
+import View.Menu.UserArea.SellerArea.SellerArea;
 
 import java.util.HashMap;
 
@@ -17,22 +20,18 @@ public class UserArea extends Menu {
 
     @Override
     public String getCommandKey(String command) {
-        return null;
-    }
-
-    @Override
-    public void run() {
         if (controller.getCurrentUserType().equals("Guest")) {
-            subMenus.get("Guest Area").run();
+            return  "Guest Area";
         }
         if (controller.getCurrentUserType().equals("Costumer")) {
-            subMenus.get("Costumer Area").run();
+            return  "Costumer Area";
         }
         if (controller.getCurrentUserType().equals("Seller")) {
-            subMenus.get("Seller Area").run();
+            return  "Seller Area";
         }
         if (controller.getCurrentUserType().equals("Manager")) {
-            subMenus.get("Manager Area").run();
+            return  "Manager Area";
         }
+        return null;
     }
 }

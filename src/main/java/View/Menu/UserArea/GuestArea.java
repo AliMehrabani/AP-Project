@@ -17,15 +17,16 @@ public class GuestArea extends Menu {
             }
 
             @Override
-            public void run() {
+            public void run(String lastCommand) {
                 controller.hasUserWithUsername("");
+                controller.isPasswordCorrect("");
                 View.printString(controller.loginAccount("", ""));
-                this.parentMenu.run();
+                this.parentMenu.run(lastCommand);
             }
         };
     }
 
-    private Menu getSignUpMenu() {
+    private Menu getRegisterMenu() {
         return new Menu("Sign Up Menu", this) {
             @Override
             public String getCommandKey(String command) {
@@ -33,10 +34,10 @@ public class GuestArea extends Menu {
             }
 
             @Override
-            public void run() {
+            public void run(String lastCommand) {
                 controller.hasUserWithUsername("");
                 View.printString(controller.createAccount(new String[3]));
-                this.parentMenu.run();
+                this.parentMenu.run(lastCommand);
             }
         };
     }
