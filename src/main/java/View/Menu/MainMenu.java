@@ -1,7 +1,7 @@
 package View.Menu;
 
-import View.Menu.OffsMenu.Offs;
-import View.Menu.ProductsPage.ProductsPage;
+import View.Menu.OffsAndProductsMenu.Offs;
+import View.Menu.OffsAndProductsMenu.ProductsPage;
 import View.Menu.UserArea.UserArea;
 
 import java.util.HashMap;
