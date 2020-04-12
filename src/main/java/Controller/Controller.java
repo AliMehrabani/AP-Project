@@ -8,7 +8,7 @@ import Models.User.Guest;
 import Models.User.User;
 
 public class Controller {
-    private static ArrayList<Product> allProduct;
+    protected static ArrayList<Product> allProduct = new ArrayList<>();
     private User currentUser;
 
     public Controller() {
