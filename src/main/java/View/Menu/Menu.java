@@ -34,6 +34,24 @@ public abstract class Menu {
         this.parentMenu = parentMenu;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void showMenu() {
+        String show = this.name + " :\n";
+        for (String key : this.subMenus.keySet()) {
+            show += subMenus.get(key).getName() + "\n";
+        }
+        show += "help\n";
+        if (this.parentMenu == null) {
+            show += "exit";
+        } else {
+            show += "back";
+        }
+        View.printString(show);
+    }
+
     public void setSubMenus(HashMap<String, Menu> subMenus) {
         this.subMenus = subMenus;
     }
@@ -48,6 +66,8 @@ public abstract class Menu {
             View.printString("invalid command");
         } else if (getCommandKey(command).equals("back")) {
             nextMenu = this.parentMenu;
+        } else if (getCommandKey(command).equals("help")) {
+            this.showMenu();
         } else {
             nextMenu = this.subMenus.get(getCommandKey(command));
         }
