@@ -17,10 +17,11 @@ public class GuestArea extends Menu {
             }
 
             @Override
-            public void run() {
+            public void run(String lastCommand) {
                 controller.hasUserWithUsername("");
+                controller.isPasswordCorrect("");
                 View.printString(controller.loginAccount("", ""));
-                this.parentMenu.run();
+                this.parentMenu.run(lastCommand);
             }
         };
     }
@@ -33,10 +34,10 @@ public class GuestArea extends Menu {
             }
 
             @Override
-            public void run() {
+            public void run(String lastCommand) {
                 controller.hasUserWithUsername("");
                 View.printString(controller.createAccount(new String[3]));
-                this.parentMenu.run();
+                this.parentMenu.run(lastCommand);
             }
         };
     }

@@ -28,19 +28,19 @@ public class Sort {
         return null;
     }
 
-    abstract class SortbyNumberOfView implements Comparator<Product> {
+    abstract class SortByNumberOfView implements Comparator<Product> {
         public int compare(Product a, Product b) {
             return 0;
         }
     }
 
-    abstract class SortbyNumberOfScore implements Comparator<Product> {
+    abstract class SortByNumberOfScore implements Comparator<Product> {
         public int compare(Product a, Product b) {
             return 0;
         }
     }
 
-    abstract class SortbyNumberOfTime implements Comparator<Product> {
+    abstract class SortByNumberOfTime implements Comparator<Product> {
         public int compare(Product a, Product b) {
             return 0;
         }

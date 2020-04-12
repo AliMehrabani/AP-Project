@@ -36,7 +36,20 @@ public class Controller {
         return "";
     }
 
+    public boolean isPasswordCorrect(String password) {
+        return false;
+    }
+
     public User getCurrentUser() {
         return currentUser;
+    }
+
+    public void editField(String field, String newContent) {
+        currentUser.setFirstName(newContent);
+        currentUser.setLastName(newContent);
+    }
+
+    public String viewUser(String username) {
+        return "";
     }
 }

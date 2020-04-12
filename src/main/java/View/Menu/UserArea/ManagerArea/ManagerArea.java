@@ -18,8 +18,8 @@ public class ManagerArea extends Menu {
     }
 
     @Override
-    public void run() {
+    public void run(String lastCommand) {
         this.showSpecifications();
-        super.run();
+        super.run(lastCommand);
     }
 }
