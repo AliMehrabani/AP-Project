@@ -16,4 +16,9 @@ public class MainMenu extends Menu {
         subMenus.put("Offs", new Offs(this));
         this.setSubMenus(subMenus);
     }
+
+    @Override
+    public String getCommandKey(String command) {
+        return null;
+    }
 }

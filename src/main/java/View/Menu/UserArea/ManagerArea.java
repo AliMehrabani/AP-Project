@@ -2,9 +2,10 @@ package View.Menu.UserArea;
 
 import View.Menu.Menu;
 
-public class UserArea extends Menu {
-    public UserArea(Menu parentMenu) {
-        super("User Area", parentMenu);
+public class ManagerArea extends Menu {
+
+    public ManagerArea(Menu parentMenu) {
+        super("Manager Area", parentMenu);
     }
 
     @Override
