@@ -7,10 +7,13 @@ public class Comment {
     private Product product;
     private String note;
     private enum commentStatus {REVIEWFORCONFIRMATION, ACCEPTED , NOTCONFIRMEDFROMMANAGER};
-    private boolean isUserBuyedThisProduct;
+    private boolean isUserBuyThisProduct;
 
-    public Comment() {
-
+    public Comment(User user , Product product , String note , /* vaziat */ boolean isUserBuyThisProduct) {
+        this.userWhoComment = user;
+        this.product = product;
+        this.note = note;
+        this.isUserBuyThisProduct = isUserBuyThisProduct;
     }
 
     public User getUserWhoComment() {
@@ -25,7 +28,7 @@ public class Comment {
         return note;
     }
 
-    public boolean isUserBuyedThisProduct() {
-        return isUserBuyedThisProduct;
+    public boolean isUserBuyThisProduct() {
+        return isUserBuyThisProduct;
     }
 }
