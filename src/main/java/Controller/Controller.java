@@ -1,9 +1,14 @@
 package Controller;
 
+import Models.Product;
+
+import java.util.ArrayList;
+
 import Models.User.Guest;
 import Models.User.User;
 
 public class Controller {
+    private static ArrayList<Product> allProduct;
     private User currentUser;
 
     public Controller() {
