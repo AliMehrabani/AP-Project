@@ -21,7 +21,7 @@ public class DiscountCode {
         this.discountPercent = discountPercent;
         this.maximumDiscountAmount = maximumDiscountAmount;
         this.discountCount = discountCount;
-        this.allowedCostumers = allowedConsumers;
+        this.allowedCostumers = allowedCostumers;
     }
 //    all setter and getter
 

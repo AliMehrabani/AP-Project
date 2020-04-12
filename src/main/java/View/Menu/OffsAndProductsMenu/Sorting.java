@@ -1,6 +1,5 @@
 package View.Menu.OffsAndProductsMenu;
 
-import Controller.Controller;
 import View.Menu.Menu;
 import View.View;
 
@@ -17,24 +16,26 @@ public class Sorting extends Menu {
 
     @Override
     public void run(String command) {
-        String input=scanner.nextLine();
-        if (input.equals("show available sorts")){
-            View.printAvailableSorting(Controller.getAllAvailableSorting());
+        String input = scanner.nextLine();
+        if (input.equals("show available sorts")) {
+            View.printAvailableSorting(controller.getAllAvailableSorting());
             this.run(command);
         }
-        if (input.equals("sort [an available sort]")){
-            //Alireza
+        if (input.equals("sort [an available sort]")) {
+            View.printSortedProduct(controller.sorting(input.split("\\s")[1]));
             this.run(command);
         }
-        if (input.equals("current sort")){
-            //Alireza
+        if (input.equals("current sort")) {
+            View.printCurrnetSort(controller.getCurrntSort());
             this.run(command);
         }
-        if (input.equals("disable sort")){
-            //ALireza
+        if (input.equals("disable sort")) {
+            controller.disableSort(input.split("\\s")[2]);
+            //bayad havasam bashe chi ro disable mikonam
+            //bayad neshom bedam?
             this.run(command);
         }
-        if (input.equals("back")){
+        if (input.equals("back")) {
             this.parentMenu.run(command);
         }
     }

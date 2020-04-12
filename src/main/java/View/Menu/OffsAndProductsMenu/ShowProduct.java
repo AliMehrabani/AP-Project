@@ -5,14 +5,15 @@ import View.Menu.Menu;
 import View.View;
 
 import java.util.HashMap;
+
 // bad az alireza bayad in ke chan bar baz shode har kala ro to controller ezafe konam.
 public class ShowProduct extends Menu {
-    private long productId;
-    public ShowProduct(String name, Menu parentMenu,long productId) {
+
+    public ShowProduct(String name, Menu parentMenu) {
         super(name, parentMenu);
-        this.productId=productId;
         HashMap<String, Menu> subMenus = new HashMap<String, Menu>();
-        subMenus.put("Digest",new Digest("Digest",this,Controller.getProductById(productId)));
+        subMenus.put("Digest", new Digest("Digest", this));
+        subMenus.put("Comments", new Comments("Comments", this));
         this.setSubMenus(subMenus);
     }
 
@@ -23,10 +24,26 @@ public class ShowProduct extends Menu {
 
     @Override
     public void run(String command) {
-        String input=scanner.nextLine();
-        if (input.equals("digest")){
-            View.printProductSummery(Controller.getProductById(productId));
+        long productId = Long.parseLong(command.split("\\s")[2]);
+        String input = scanner.nextLine();
+        if (input.equals("digest")) {
+            View.printProductSummery(controller.getProductById(productId));
             this.run(command);
+        }
+        if (input.equals("attributes")) {
+            View.printAttributes(controller.getProductById(productId));
+            this.run(command);
+        }
+        if (input.equals("compare [productID]")) {
+            View.printCompareProduct(controller.getProductById(productId), controller.getProductById(Long.parseLong(input.split("\\s")[2])));
+            this.run(command);
+        }
+        if (input.equals("Comments")) {
+            new Comments("Comments", this);
+            this.run(command);
+        }
+        if (input.equals("back")) {
+            this.parentMenu.run(command);
         }
     }
 }

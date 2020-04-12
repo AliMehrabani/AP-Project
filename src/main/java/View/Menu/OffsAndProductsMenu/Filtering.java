@@ -1,6 +1,5 @@
 package View.Menu.OffsAndProductsMenu;
 
-import Controller.Controller;
 import View.Menu.Menu;
 import View.View;
 
@@ -16,24 +15,25 @@ public class Filtering extends Menu {
 
     @Override
     public void run(String command) {
-        String input=scanner.nextLine();
+        String input = scanner.nextLine();
         if (input.equals("show available filters")) {
-            View.printAvailableFilters(Controller.getAllAvailableFilters());
+            View.printAvailableFilters(controller.getAllAvailableFilters());
             this.run(command);
         }
-        if (input.equals("filter [an available filter]")){
-            //Alireza tabee ro neveshte.
+        if (input.equals("filter [an available filter]")) {
+            View.printFilterdProduct(controller.filtering(input.split("\\s")[1]));
             this.run(command);
         }
-        if (input.equals("current filters")){
-            //Alireza check konam nahash.
+        if (input.equals("current filters")) {
+            View.printCurrentFilter(controller.getCurrentFilter());
             this.run(command);
         }
-        if (input.equals("disable filter [a selected filter]")){
-            //Alireza bayad okey kone
+        if (input.equals("disable filter [a selected filter]")) {
+            controller.disableFilter(input.split("\\s")[1]);
+            //bayad badesh neshon bedam?
             this.run(command);
         }
-        if (input.equals("back")){
+        if (input.equals("back")) {
             this.parentMenu.run(command);
         }
     }

@@ -1,14 +1,13 @@
 package View.Menu.OffsAndProductsMenu;
 
-import Controller.Controller;
 import Models.Product;
 import View.Menu.Menu;
+import View.Menu.UserArea.GuestArea;
 
 public class Digest extends Menu {
-    Product product;
-    public Digest(String name, Menu parentMenu, Product product) {
+
+    public Digest(String name, Menu parentMenu) {
         super(name, parentMenu);
-        this.product=product;
     }
 
     @Override
@@ -18,15 +17,23 @@ public class Digest extends Menu {
 
     @Override
     public void run(String command) {
-        long productId=Long.parseLong(command.split("\\s")[2]);
-        String input=scanner.nextLine();
-        if (input.equals("add to cart")){
-            //get type konam bad az ali bebinam ke karbare ya ne
-            Controller.addToCart(Controller.getProductById(productId));
+        long productId = Long.parseLong(command.split("\\s")[2]);
+        String input = scanner.nextLine();
+        if (input.equals("add to cart")) {
+            String type=controller.getCurrentUserType();
+            if (type.equals("Geust")){
+                new GuestArea(this);
+            }
+            //havasam bashe ke Guest ham mitone sabad dashte bashe.
+            controller.addToCart(controller.getProductById(productId));
             this.run(command);
         }
-        if (input.equals("select seller [seller_username]")){
-
+        if (input.equals("select seller [seller_username]")) {
+            //che konam?
+            this.run(command);
+        }
+        if (input.equals("back")) {
+            this.parentMenu.run(command);
         }
     }
 }

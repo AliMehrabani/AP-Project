@@ -45,27 +45,31 @@ public class Controller {
         return "";
     }
 
-    public static ArrayList<Product> getAllProduct(boolean Off) {
+    public  ArrayList<Product> getAllProduct() {
         return null;
     }
 
-    public static ArrayList<Category>getAllCategory(){
+    public  ArrayList<Product> getAllOffProduct() {
+        return null;
+    }
+
+    public  ArrayList<Category> getAllCategory() {
         return allCategory;
     }
 
-    public static ArrayList<String>getAllAvailableFilters(){
+    public  ArrayList<String> getAllAvailableFilters() {
         return allAvailableFilters;
     }
 
-    public static ArrayList<String> getAllAvailableSorting() {
+    public  ArrayList<String> getAllAvailableSorting() {
         return allAvailableSorting;
     }
 
-    public static Product getProductById(long productId){
+    public  Product getProductById(long productId) {
         return null;
     }
 
-    public static void addToCart(Product product){
+    public  void addToCart(Product product) {
         cart.add(product);
         //check beshe.
     }
@@ -141,5 +145,35 @@ public class Controller {
 
     public void removeCategory(String name) {
 
+    }
+
+    public  void addComments(Product product, String title, String content) {
+        //
+    }
+
+    public ArrayList<Product> filtering(String filter){
+        //bayad havasam bashe shayad chnta filter yoho On bokone.
+        return null;
+    }
+
+    public ArrayList<String> getCurrentFilter(){
+        return Filter.showCurrentFilters();
+    }
+
+    public void disableFilter(String filter){
+        //
+    }
+
+    public ArrayList<Product> sorting(String sort){
+        return null;
+    }
+
+    public ArrayList<String> getCurrntSort(){
+        return null;
+    }
+
+    public void disableSort(String sort){
+        //bayad havasm bashe shayad chand ta ro ye zarb bekhad disable kone
+        //
     }
 }
