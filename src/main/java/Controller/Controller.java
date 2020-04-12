@@ -35,4 +35,8 @@ public class Controller {
         User.getUserByUsername("");
         return "";
     }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
 }

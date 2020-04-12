@@ -1,4 +1,4 @@
-package View.Menu.UserArea;
+package View.Menu.UserArea.CostumerArea;
 
 import View.Menu.Menu;
 
@@ -11,5 +11,15 @@ public class CostumerArea extends Menu {
     @Override
     public String getCommandKey(String command) {
         return null;
+    }
+
+    public void showSpecifications() {
+        controller.getCurrentUser();
+    }
+
+    @Override
+    public void run() {
+        this.showSpecifications();
+        super.run();
     }
 }
