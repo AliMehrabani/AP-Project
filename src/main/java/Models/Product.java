@@ -3,6 +3,7 @@ package Models;
 import Models.User.Seller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class Product {
@@ -17,7 +18,10 @@ public class Product {
     private double averageScore;
     private ArrayList<Comment> allComments;
     private enum productStatus {REVIEWFORMAKE, REVIEWFOREDIT, ACCEPTED};
-
+    private double discountPercentage;
+    private boolean doesItHaveDiscount;
+    private int numberOfView;
+    private Date addProductDate;
     public Product() {
 
     }

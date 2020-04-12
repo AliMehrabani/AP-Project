@@ -1,7 +1,6 @@
 package Models;
 
 import Models.User.Costumer;
-
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,8 +13,7 @@ public class DiscountCode {
     private int discountCount;
     private ArrayList<Costumer> allowedCostumers = new ArrayList<Costumer>();
 
-    public DiscountCode(String discountId, Date startDate, Date endDate, int discountPercent, long maximumDiscountAmount,
-                        int discountCount, ArrayList<Costumer> allowedConsumers) {
+    public DiscountCode(String discountId, Date startDate, Date endDate, int discountPercent, long maximumDiscountAmount, int discountCount, ArrayList<Costumer> allowedConsumers) {
         DiscountId = discountId;
         this.startDate = startDate;
         this.endDate = endDate;

@@ -1,7 +1,5 @@
 package Models;
 
-import Controller.Controller;
-
 import java.util.ArrayList;
 
 public class Category {
@@ -10,9 +8,9 @@ public class Category {
     private ArrayList<Category> subCategories;
     private ArrayList<Product> allProduct;
 
-    public Category(String[] inputs) {
-        this.name = inputs[0];
-        this.specialAttribute = inputs[1];
+    public Category(String name, String specialAttribute) {
+        this.name = name;
+        this.specialAttribute = specialAttribute;
         subCategories = new ArrayList<>();
         allProduct = new ArrayList<Product>();
     }
