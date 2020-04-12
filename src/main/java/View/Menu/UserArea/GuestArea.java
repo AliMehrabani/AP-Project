@@ -25,7 +25,7 @@ public class GuestArea extends Menu {
         };
     }
 
-    private Menu getSignUpMenu() {
+    private Menu getRegisterMenu() {
         return new Menu("Sign Up Menu", this) {
             @Override
             public String getCommandKey(String command) {
