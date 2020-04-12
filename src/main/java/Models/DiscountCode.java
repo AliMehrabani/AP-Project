@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class DiscountCode {
+    private static ArrayList<DiscountCode> allDiscountCodes = new ArrayList<>();
     private String DiscountId;
     private Date startDate;
     private Date endDate;
@@ -13,7 +14,7 @@ public class DiscountCode {
     private int discountCount;
     private ArrayList<Costumer> allowedCostumers = new ArrayList<Costumer>();
 
-    public DiscountCode(String discountId, Date startDate, Date endDate, int discountPercent, long maximumDiscountAmount, int discountCount, ArrayList<Costumer> allowedConsumers) {
+    public DiscountCode(String discountId, Date startDate, Date endDate, int discountPercent, long maximumDiscountAmount, int discountCount, ArrayList<Costumer> allowedCostumers) {
         DiscountId = discountId;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -83,5 +84,10 @@ public class DiscountCode {
 //    add new allowed costumer
     public void addAllowedCustomer(Costumer costumer){
         this.allowedCostumers.add(costumer);
+        this.allowedCostumers = allowedCostumers;
+    }
+
+    public static void addDiscountCode(DiscountCode discountCode) {
+
     }
 }

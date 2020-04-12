@@ -1,8 +1,10 @@
 package Controller;
 
 import Models.Category;
+import Models.DiscountCode;
 import Models.Product;
 
+import java.awt.desktop.UserSessionEvent;
 import java.util.ArrayList;
 
 import Models.User.Guest;
@@ -15,9 +17,11 @@ public class Controller {
     private static ArrayList<String> allAvailableSorting;
     private static ArrayList<Product> cart;
     private User currentUser;
+    private boolean hasHeadManager;
 
     public Controller() {
         this.currentUser = new Guest();
+        this.hasHeadManager = false;
     }
 
     public String getCurrentUserType() {
@@ -81,5 +85,61 @@ public class Controller {
 
     public String viewUser(String username) {
         return "";
+    }
+
+    public void deleteUser(String username) {
+        User.deleteUser(username);
+    }
+
+    public void changeUserType(String username, String newType) {
+
+    }
+
+    public void createManagerProfile(String[] info) {
+        User.addUser(null);
+    }
+
+    public void deleteProduct(long productID) {
+
+    }
+
+    public void createDiscountCode(String[] info) {
+        DiscountCode.addDiscountCode(null);
+    }
+
+    public void viewDiscountCodes(long code) {
+
+    }
+
+    public void editDiscountCode(long code) {
+
+    }
+
+    public void removeDiscountCode(long code) {
+
+    }
+
+    public void requestDetails(long requestID) {
+        //manager class is not complete
+    }
+
+    public void acceptRequest(long requestID) {
+
+    }
+
+    public void declineRequest(long requestID) {
+
+    }
+
+    public void editCategory(String name) {
+
+    }
+
+    public void addCategory(String name) {
+
+    }
+
+    public void removeCategory(String name) {
+
     }
 }
