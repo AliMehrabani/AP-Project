@@ -1,6 +1,7 @@
 package View.Menu;
 
 import Controller.Controller;
+import View.View;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,8 +10,8 @@ import java.util.regex.Pattern;
 
 public abstract class Menu {
     private String name;
-    private HashMap<String, Menu> subMenus;
-    private Menu parentMenu;
+    protected HashMap<String, Menu> subMenus;
+    protected Menu parentMenu;
     public static Scanner scanner;
     private static Controller controller;
     private static ArrayList<Menu> allMenus;
@@ -29,14 +30,47 @@ public abstract class Menu {
         Menu.scanner = scanner;
     }
 
+    public void setParentMenu(Menu parentMenu) {
+        this.parentMenu = parentMenu;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void showMenu() {
+        String show = this.name + " :\n";
+        for (String key : this.subMenus.keySet()) {
+            show += subMenus.get(key).getName() + "\n";
+        }
+        show += "help\n";
+        if (this.parentMenu == null) {
+            show += "exit";
+        } else {
+            show += "back";
+        }
+        View.printString(show);
+    }
+
     public void setSubMenus(HashMap<String, Menu> subMenus) {
         this.subMenus = subMenus;
     }
 
-    public void run() {
-        while (true) {
-            String command = scanner.nextLine().trim();
+    public abstract String getCommandKey(String command);
 
+    public void run() {
+        String command = scanner.nextLine().trim();
+        Menu nextMenu = null;
+        if (getCommandKey(command).equals("invalid")) {
+            nextMenu = this;
+            View.printString("invalid command");
+        } else if (getCommandKey(command).equals("back")) {
+            nextMenu = this.parentMenu;
+        } else if (getCommandKey(command).equals("help")) {
+            this.showMenu();
+        } else {
+            nextMenu = this.subMenus.get(getCommandKey(command));
         }
+        nextMenu.run();
     }
 }
