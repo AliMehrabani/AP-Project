@@ -65,5 +65,9 @@ public abstract class User {
         this.password = password;
     }
 
+    public static User getUserByUsername(String username) {
+        return null;
+    }
+
     public abstract String getType();
 }

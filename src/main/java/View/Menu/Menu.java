@@ -6,6 +6,7 @@ import View.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class Menu {
@@ -13,8 +14,8 @@ public abstract class Menu {
     protected HashMap<String, Menu> subMenus;
     protected Menu parentMenu;
     public static Scanner scanner;
-    private static Controller controller;
-    private static ArrayList<Menu> allMenus;
+    protected static Controller controller;
+    protected static ArrayList<Menu> allMenus;
 
     public Menu(String name, Menu parentMenu) {
         this.name = name;
@@ -32,6 +33,11 @@ public abstract class Menu {
 
     public void setParentMenu(Menu parentMenu) {
         this.parentMenu = parentMenu;
+    }
+
+    public static Matcher getMatcher(String command, String regex) {
+        Pattern pattern = Pattern.compile(regex);
+        return pattern.matcher(command);
     }
 
     public String getName() {

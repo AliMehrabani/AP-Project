@@ -1,6 +1,7 @@
 package View.Menu.UserArea;
 
 import View.Menu.Menu;
+import View.View;
 
 public class GuestArea extends Menu {
 
@@ -14,6 +15,13 @@ public class GuestArea extends Menu {
             public String getCommandKey(String command) {
                 return null;
             }
+
+            @Override
+            public void run() {
+                controller.hasUserWithUsername("");
+                View.printString(controller.loginAccount("", ""));
+                this.parentMenu.run();
+            }
         };
     }
 
@@ -22,6 +30,13 @@ public class GuestArea extends Menu {
             @Override
             public String getCommandKey(String command) {
                 return null;
+            }
+
+            @Override
+            public void run() {
+                controller.hasUserWithUsername("");
+                View.printString(controller.createAccount(new String[3]));
+                this.parentMenu.run();
             }
         };
     }
