@@ -3,7 +3,6 @@ package Models.User;
 import java.util.ArrayList;
 
 public abstract class User {
-    private static ArrayList<User> allUsers = new ArrayList<User>();
     private String username;
     private String firstName;
     private String lastName;
@@ -18,7 +17,6 @@ public abstract class User {
         this.eMail = eMail;
         this.phoneNumber = phoneNumber;
         this.password = password;
-        allUsers.add(this);
     }
 
     public String getUsername() {
