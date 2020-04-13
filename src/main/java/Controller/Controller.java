@@ -45,33 +45,37 @@ public class Controller {
         return "";
     }
 
-    public  ArrayList<Product> getAllProduct() {
+    public ArrayList<Product> getAllProduct() {
         return null;
     }
 
-    public  ArrayList<Product> getAllOffProduct() {
+    public ArrayList<Product> getAllOffProduct() {
         return null;
     }
 
-    public  ArrayList<Category> getAllCategory() {
+    public ArrayList<Category> getAllCategory() {
         return allCategory;
     }
 
-    public  ArrayList<String> getAllAvailableFilters() {
+    public ArrayList<String> getAllAvailableFilters() {
         return allAvailableFilters;
     }
 
-    public  ArrayList<String> getAllAvailableSorting() {
+    public ArrayList<String> getAllAvailableSorting() {
         return allAvailableSorting;
     }
 
-    public  Product getProductById(long productId) {
+    public Product getProductById(long productId) {
         return null;
     }
 
-    public  void addToCart(Product product) {
+    public void addToCart(Product product) {
         cart.add(product);
         //check beshe.
+    }
+
+    public void removeFromCart(long productId) {
+
     }
 
     public boolean isPasswordCorrect(String password) {
@@ -111,7 +115,7 @@ public class Controller {
         DiscountCode.addDiscountCode(null);
     }
 
-    public void viewDiscountCodes(long code) {
+    public void viewDiscountCode(long code) {
 
     }
 
@@ -151,7 +155,8 @@ public class Controller {
 
     }
 
-    public void viewSellerProducts() {}
+    public void viewSellerProducts() {
+    }
 
     public String viewSalesHistory() {
         return "";
@@ -193,32 +198,44 @@ public class Controller {
 
     }
 
-    public  void addComments(Product product, String title, String content) {
+    public String showProducts() {
+        return "";
+    }
+
+    public double getTotalPrice() {
+        return 0;
+    }
+
+    public String viewCostumerDiscountCodes() {
+        return "";
+    }
+
+    public void addComments(Product product, String title, String content) {
         //
     }
 
-    public ArrayList<Product> filtering(String filter){
+    public ArrayList<Product> filtering(String filter) {
         //bayad havasam bashe shayad chnta filter yoho On bokone.
         return null;
     }
 
-    public ArrayList<String> getCurrentFilter(){
+    public ArrayList<String> getCurrentFilter() {
         return Filter.showCurrentFilters();
     }
 
-    public void disableFilter(String filter){
+    public void disableFilter(String filter) {
         //
     }
 
-    public ArrayList<Product> sorting(String sort){
+    public ArrayList<Product> sorting(String sort) {
         return null;
     }
 
-    public ArrayList<String> getCurrentSort(){
+    public ArrayList<String> getCurrentSort() {
         return null;
     }
 
-    public void disableSort(String sort){
+    public void disableSort(String sort) {
         //bayad havasm bashe shayad chand ta ro ye zarb bekhad disable kone
         //
     }

@@ -4,8 +4,8 @@ import View.Menu.Menu;
 import View.View;
 
 public class ShowAllProducts extends Menu {
-    public ShowAllProducts(String name, Menu parentMenu) {
-        super(name, parentMenu);
+    public ShowAllProducts(Menu parentMenu) {
+        super("Show All Products", parentMenu);
     }
 
     @Override

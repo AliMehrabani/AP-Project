@@ -5,8 +5,8 @@ import View.View;
 
 public class Sorting extends Menu {
 
-    public Sorting(String name, Menu parentMenu) {
-        super(name, parentMenu);
+    public Sorting(Menu parentMenu) {
+        super("Sorting", parentMenu);
     }
 
     @Override

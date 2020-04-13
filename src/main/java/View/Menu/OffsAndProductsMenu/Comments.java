@@ -6,8 +6,8 @@ import View.Menu.Menu;
 public class Comments extends Menu {
     private Product product;
 
-    public Comments(String name, Menu parentMenu) {
-        super(name, parentMenu);
+    public Comments(Menu parentMenu) {
+        super("Comments", parentMenu);
     }
 
     @Override

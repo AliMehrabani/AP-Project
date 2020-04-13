@@ -3,13 +3,14 @@ package Models.User;
 import Models.Product;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Guest extends User {
-    private ArrayList<Product> cart;
+    private HashMap<Product, Integer> cart;
 
     public Guest() {
         super(null, null, null, null, 0, null);
-        this.cart = new ArrayList<>();
+        this.cart = new HashMap<>();
     }
 
     public void addProduct(Product product){}

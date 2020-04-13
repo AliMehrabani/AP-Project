@@ -4,8 +4,8 @@ import View.Menu.Menu;
 import View.View;
 
 public class Filtering extends Menu {
-    public Filtering(String name, Menu parentMenu) {
-        super(name, parentMenu);
+    public Filtering(Menu parentMenu) {
+        super("Filtering", parentMenu);
     }
 
     @Override

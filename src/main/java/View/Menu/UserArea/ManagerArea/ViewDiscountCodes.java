@@ -17,7 +17,7 @@ public class ViewDiscountCodes extends Menu {
         return new Menu("View Discount Code", this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewDiscountCodes(1);
+                controller.viewDiscountCode(1);
             }
         };
     }

@@ -6,8 +6,8 @@ import View.Menu.UserArea.GuestArea;
 
 public class Digest extends Menu {
 
-    public Digest(String name, Menu parentMenu) {
-        super(name, parentMenu);
+    public Digest(Menu parentMenu) {
+        super("Digest", parentMenu);
     }
 
     @Override
