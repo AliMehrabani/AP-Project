@@ -6,9 +6,10 @@ import Models.Product;
 import java.util.ArrayList;
 
 public class DataBase {
-    protected static ArrayList<Product> allProduct;
-    protected static ArrayList<Category> allCategory;
-    protected static ArrayList<String> allAvailableFilters;
-    protected static ArrayList<String> allAvailableSorting;
-    protected static ArrayList<Product> cart;
+    protected static ArrayList<Product> allProduct = new ArrayList<>();
+    protected static ArrayList<Category> allCategory = new ArrayList<>();
+    protected static ArrayList<String> allAvailableFilters = new ArrayList<>();
+    protected static ArrayList<String> allAvailableSorting = new ArrayList<>();
+    protected static ArrayList<Product> cart = new ArrayList<>();
+    protected static ArrayList<Product> sortedOrFilteredProduct = new ArrayList<>();
 }
