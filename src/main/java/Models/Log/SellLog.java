@@ -22,4 +22,32 @@ public class SellLog extends Log {
         this.logId = logId;
         this.logDate = logDate;
     }
+
+    private void changeDeliveryStatus(DeliveryStatus newDeliveryStatus) {
+        this.deliveryStatus = newDeliveryStatus;
+    }
+
+    public void setDeliveryStatus(DeliveryStatus deliveryStatus) {
+        this.deliveryStatus = deliveryStatus;
+    }
+
+    public double getReceivedAmount() {
+        return receivedAmount;
+    }
+
+    public double getReducedAmountForSale() {
+        return reducedAmountForSale;
+    }
+
+    public ArrayList<Product> getSoldProduct() {
+        return soldProduct;
+    }
+
+    public String getBuyerName() {
+        return buyerName;
+    }
+
+    public DeliveryStatus getDeliveryStatus() {
+        return deliveryStatus;
+    }
 }

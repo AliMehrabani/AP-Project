@@ -50,4 +50,8 @@ public class Category {
     public ArrayList<String> showCategories(){
         return null;
     }
+
+    public Category getCategoryByName(String name) {
+        return null;
+    }
 }

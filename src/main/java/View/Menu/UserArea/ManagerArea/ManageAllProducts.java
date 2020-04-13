@@ -2,10 +2,10 @@ package View.Menu.UserArea.ManagerArea;
 
 import View.Menu.Menu;
 
-public class ManagerArea extends Menu {
+public class ManageAllProducts extends Menu {
 
-    public ManagerArea(Menu parentMenu) {
-        super("Manager Area", parentMenu);
+    public ManageAllProducts(String name, Menu parentMenu) {
+        super("Manage All Products", parentMenu);
     }
 
     @Override
@@ -13,8 +13,8 @@ public class ManagerArea extends Menu {
         return null;
     }
 
-    private Menu getCreateDiscountCode() {
-        return new Menu("Create Discount Code", this) {
+    private Menu getDeleteProduct() {
+        return new Menu("Delete Product", this) {
             @Override
             public String getCommandKey(String command) {
                 return null;
@@ -22,18 +22,18 @@ public class ManagerArea extends Menu {
 
             @Override
             public void run(String lastCommand) {
-                controller.createDiscountCode(new String[3]);
+                controller.deleteProduct(1);
             }
         };
     }
 
-    public void showSpecifications() {
-        controller.getCurrentUser();
+    private void showAllProducts() {
+
     }
 
     @Override
     public void run(String lastCommand) {
-        this.showSpecifications();
+        this.showAllProducts();
         super.run(lastCommand);
     }
 }

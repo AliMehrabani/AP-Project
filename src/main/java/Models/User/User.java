@@ -69,5 +69,13 @@ public abstract class User {
         return null;
     }
 
+    public static void deleteUser(String username) {
+
+    }
+
+    public static void addUser(User user) {
+
+    }
+
     public abstract String getType();
 }
