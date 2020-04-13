@@ -1,4 +1,4 @@
-package View.Menu.UserArea.ManagerArea;
+package View.Menu.UserArea;
 
 import View.Menu.Menu;
 

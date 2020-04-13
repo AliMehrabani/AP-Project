@@ -147,6 +147,28 @@ public class Controller {
 
     }
 
+    public void viewCompanyInfo() {
+
+    }
+
+    public void viewSellerProducts() {}
+
+    public String viewSalesHistory() {
+        return "";
+    }
+
+    public String viewProductBuyers() {
+        return "";
+    }
+
+    public void editProduct(String field, String newContent, long productID) {
+
+    }
+
+    public void addProduct(String[] info) {
+
+    }
+
     public  void addComments(Product product, String title, String content) {
         //
     }
@@ -168,7 +190,7 @@ public class Controller {
         return null;
     }
 
-    public ArrayList<String> getCurrntSort(){
+    public ArrayList<String> getCurrentSort(){
         return null;
     }
 

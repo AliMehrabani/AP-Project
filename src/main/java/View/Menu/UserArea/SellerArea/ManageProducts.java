@@ -3,10 +3,10 @@ package View.Menu.UserArea.SellerArea;
 import View.Menu.Menu;
 import View.View;
 
-public class SellerArea extends Menu {
+public class ManageProducts extends Menu {
 
-    public SellerArea(Menu parentMenu) {
-        super("Seller Area", parentMenu);
+    public ManageProducts(Menu parentMenu) {
+        super("Manage Products", parentMenu);
     }
 
     @Override
@@ -14,8 +14,8 @@ public class SellerArea extends Menu {
         return null;
     }
 
-    private Menu getViewCompanyInformation() {
-        return new Menu("View Company Information", this) {
+    private Menu getView() {
+        return new Menu("view",this) {
             @Override
             public String getCommandKey(String command) {
                 return null;
@@ -23,30 +23,15 @@ public class SellerArea extends Menu {
 
             @Override
             public void run(String lastCommand) {
-                controller.viewCompanyInfo();
-                this.parentMenu.run("");
-            }
-        };
-    }
-
-    private Menu getViewSalesHistory() {
-        return new Menu("View Sales History", this) {
-            @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
-            public void run(String lastCommand) {
-                controller.viewSalesHistory();
+                controller.viewSellerProducts();
                 View.printString("");
                 this.parentMenu.run("");
             }
         };
     }
 
-    private Menu getAddProduct() {
-        return new Menu("Add Product", this) {
+    private Menu getViewBuyers() {
+        return new Menu("View Buyers", this) {
             @Override
             public String getCommandKey(String command) {
                 return null;
@@ -54,19 +39,32 @@ public class SellerArea extends Menu {
 
             @Override
             public void run(String lastCommand) {
-                controller.addProduct(new String[3]);
+                controller.viewProductBuyers();
                 this.parentMenu.run("");
             }
         };
     }
 
-    public void showSpecifications() {
-        controller.getCurrentUser();
+    private Menu getEdit() {
+        return new Menu("Edit", this) {
+            @Override
+            public String getCommandKey(String command) {
+                return null;
+            }
+
+            @Override
+            public void run(String lastCommand) {
+                controller.editProduct("", "", 1);
+                this.parentMenu.run("");
+            }
+        };
     }
+
+    private void showProducts(){}
 
     @Override
     public void run(String lastCommand) {
-        this.showSpecifications();
+        this.showProducts();
         super.run(lastCommand);
     }
 }

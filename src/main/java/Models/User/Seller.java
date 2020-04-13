@@ -18,6 +18,8 @@ public class Seller extends User {
         this.offs = new ArrayList<>();
     }
 
+    public Off getOffByID(long ID) {return null;}
+
     @Override
     public String getType() {
         return "Seller";

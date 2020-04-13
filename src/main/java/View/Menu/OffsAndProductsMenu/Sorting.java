@@ -26,7 +26,7 @@ public class Sorting extends Menu {
             this.run(command);
         }
         if (input.equals("current sort")) {
-            View.printCurrnetSort(controller.getCurrntSort());
+            View.printCurrnetSort(controller.getCurrentSort());
             this.run(command);
         }
         if (input.equals("disable sort")) {
