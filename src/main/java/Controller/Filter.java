@@ -6,8 +6,6 @@ import Models.Product;
 import java.util.ArrayList;
 
 public class Filter {
-    private static ArrayList<Product> currentChosenProducts = new ArrayList<Product>();
-    private static ArrayList<String> productsAttributesForShow = new ArrayList<>();
 
     private static boolean isItFilteredByName = false;
     private static boolean isItFilteredByCategory = false;
@@ -15,8 +13,8 @@ public class Filter {
     private static boolean isItFilteredByAvailability = false;
     private static boolean isItFilteredByBrand = false;
     private static boolean isItFilteredByOffs = false;
-
     private static ArrayList<String> selectedBrands = new ArrayList<>();
+
     private static int minPrice = -1;
     private static int maxPrice = -1;
     private static String name = "";

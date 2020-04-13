@@ -192,7 +192,11 @@ public class Controller {
     }
 
     public void disableSort(String sort) {
-        //bayad havasm bashe shayad chand ta ro ye zarb bekhad disable kone
-        //        //
+        Sort.sortByView();
+    }
+
+    public void restartSortedOrFilterProducts(){
+        sortedOrFilteredProduct.clear();
+        sortedOrFilteredProduct = allProduct;
     }
 }

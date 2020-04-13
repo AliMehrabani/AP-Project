@@ -18,25 +18,29 @@ public class Sort {
         Sort.currentSort = currentSort;
     }
 
-    public static ArrayList<String> sortByTime() {
-        return null;
+    public static String getCurrentSort() {
+        return currentSort;
     }
 
-    public static ArrayList<String> sortByScore() {
-        return null;
+    public static void sortByTime() {
+        return;
     }
 
-    public static ArrayList<String> sortByNumberOfView() {
-        return null;
+    public static void sortByScore() {
+        return;
     }
 
-    abstract class SortByNumberOfView implements Comparator<Product> {
+    public static void sortByView() {
+        return;
+    }
+
+    abstract class SortByView implements Comparator<Product> {
         public int compare(Product a, Product b) {
             return 0;
         }
     }
 
-    abstract class SortByNumberOfScore implements Comparator<Product> {
+    abstract class SortByScore implements Comparator<Product> {
         public int compare(Product a, Product b) {
             return 0;
         }
@@ -55,11 +59,29 @@ public class Sort {
         return false;
     }
 
+    public static void sort(String sortType) {
+        if (sortType.matches("(?i)views")) {
+            sortByView();
+        } else if (sortType.matches("(?i)time")) {
+            sortByTime();
+        } else if (sortType.matches("(?i)score")) {
+            sortByScore();
+        }
+    }
+
+    public static ArrayList<String> getSortedProducts() {
+        ArrayList<String> sortedProducts = new ArrayList<>();
+        for (Product product : DataBase.sortedOrFilteredProduct) {
+            sortedProducts.add(product.getName());
+        }
+        return sortedProducts;
+    }
+
     public static ArrayList<String> showAvailableSorts() {
         ArrayList<String> availableSorts = new ArrayList<>();
         availableSorts.add("sort by time");
         availableSorts.add("sort by score");
-        availableSorts.add("sort by number of veiw");
+        availableSorts.add("sort by views");
         return availableSorts;
     }
 
