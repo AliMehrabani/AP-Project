@@ -2,10 +2,12 @@ package Controller;
 
 import Models.Category;
 import Models.Product;
+import Models.User.User;
 
 import java.util.ArrayList;
 
 public class DataBase {
+    protected static ArrayList<User> allUsers;
     protected static ArrayList<Product> allProduct;
     protected static ArrayList<Category> allCategory;
     protected static ArrayList<String> allAvailableFilters;
