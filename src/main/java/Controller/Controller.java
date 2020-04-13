@@ -4,18 +4,14 @@ import Models.Category;
 import Models.DiscountCode;
 import Models.Product;
 
-import java.awt.desktop.UserSessionEvent;
 import java.util.ArrayList;
 
 import Models.User.Guest;
 import Models.User.User;
 
+import static Controller.DataBase.*;
+
 public class Controller {
-    private static ArrayList<Product> allProduct;
-    private static ArrayList<Category> allCategory;
-    private static ArrayList<String> allAvailableFilters;
-    private static ArrayList<String> allAvailableSorting;
-    private static ArrayList<Product> cart;
     private User currentUser;
     private boolean hasHeadManager;
 
@@ -74,10 +70,6 @@ public class Controller {
         //check beshe.
     }
 
-    public void removeFromCart(long productId) {
-
-    }
-
     public boolean isPasswordCorrect(String password) {
         return false;
     }
@@ -115,7 +107,7 @@ public class Controller {
         DiscountCode.addDiscountCode(null);
     }
 
-    public void viewDiscountCode(long code) {
+    public void viewDiscountCodes(long code) {
 
     }
 
@@ -174,42 +166,6 @@ public class Controller {
 
     }
 
-    public void removeProduct(long productId) {
-
-    }
-
-    public String showCategories() {
-        return "";
-    }
-
-    public double getBalance() {
-        return 0;
-    }
-
-    public String viewOff() {
-        return "";
-    }
-
-    public void editOff(String field, String newContent, long offId) {
-
-    }
-
-    public void addOff(String[] info) {
-
-    }
-
-    public String showProducts() {
-        return "";
-    }
-
-    public double getTotalPrice() {
-        return 0;
-    }
-
-    public String viewCostumerDiscountCodes() {
-        return "";
-    }
-
     public void addComments(Product product, String title, String content) {
         //
     }
@@ -237,6 +193,6 @@ public class Controller {
 
     public void disableSort(String sort) {
         //bayad havasm bashe shayad chand ta ro ye zarb bekhad disable kone
-        //
+        //        //
     }
 }
