@@ -5,6 +5,8 @@ import Models.Product;
 
 import java.util.ArrayList;
 
+import static Controller.DataBase.*;
+
 public class Filter {
 
     private static boolean isItFilteredByName = false;
@@ -21,28 +23,28 @@ public class Filter {
     private static String categoryName = "";
     private static int availability = -1;
 
-    public static ArrayList<String> filterByName(String name) {
-        return null;
+    public static void filterByName(String name) {
+        return;
     }
 
-    public static ArrayList<String> filterByCategory(String categoryName) {
-        return null;
+    public static void filterByCategory(String categoryName) {
+        return;
     }
 
-    public static ArrayList<String> filterByPrice(double min, double max) {
-        return null;
+    public static void filterByPrice(double min, double max) {
+        return;
     }
 
-    public static ArrayList<String> filterByAvailability(int number) {
-        return null;
+    public static void filterByAvailability(int number) {
+        return;
     }
 
-    public static ArrayList<String> filterByBrand(String brandName) {
-        return null;
+    public static void filterByBrand(String brandName) {
+        return;
     }
 
-    public static ArrayList<String> filterByOffs() {
-        return null;
+    public static void filterByOffs() {
+        return;
     }
 
     public static ArrayList<String> showAvailableFilters() {
@@ -105,9 +107,9 @@ public class Filter {
         return false;
     }
 
-    public static boolean isItAnyFiltersActivated() {
-        return false;
+    public static ArrayList<String> showAvailableSorts() {
+        ArrayList<String> availableFilters = new ArrayList<>();
+        return availableFilters;
     }
-
 
 }

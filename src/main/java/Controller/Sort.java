@@ -53,18 +53,18 @@ public class Sort {
     }
 
     public static boolean isInputASortKind(String input) {
-        if (input.equals("Score") || input.equals("Time") || (input.equals("Viewed"))) {
+        if (input.matches("(?i)score") || input.matches("(?i)time") || (input.matches("(?i)viewed"))) {
             return true;
         }
         return false;
     }
 
-    public static void sort(String sortType) {
-        if (sortType.matches("(?i)views")) {
+    public static void sort() {
+        if (currentSort.matches("(?i)views")) {
             sortByView();
-        } else if (sortType.matches("(?i)time")) {
+        } else if (currentSort.matches("(?i)time")) {
             sortByTime();
-        } else if (sortType.matches("(?i)score")) {
+        } else if (currentSort.matches("(?i)score")) {
             sortByScore();
         }
     }
@@ -76,6 +76,8 @@ public class Sort {
         }
         return sortedProducts;
     }
+
+
 
     public static ArrayList<String> showAvailableSorts() {
         ArrayList<String> availableSorts = new ArrayList<>();

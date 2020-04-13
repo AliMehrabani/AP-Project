@@ -112,7 +112,7 @@ public class Product {
         return discountPercentage;
     }
 
-    public boolean isDoesItHaveDiscount() {
+    public boolean getDoesItHaveDiscount() {
         return doesItHaveDiscount;
     }
 

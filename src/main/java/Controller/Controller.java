@@ -195,8 +195,16 @@ public class Controller {
         Sort.sortByView();
     }
 
-    public void restartSortedOrFilterProducts(){
+    public void restartSortedOrFilterProducts() {
         sortedOrFilteredProduct.clear();
         sortedOrFilteredProduct = allProduct;
+    }
+
+    public ArrayList<String> showSortedOrFilteredProducts() {
+        ArrayList<String> sortedOrFiltered = new ArrayList<>();
+        for (Product product : sortedOrFilteredProduct) {
+            sortedOrFiltered.add("Product Name: " + product.getName() + " | Price: " + product.getPrice());
+        }
+        return  sortedOrFiltered;
     }
 }
