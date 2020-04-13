@@ -9,14 +9,9 @@ public class ShowCategories extends Menu {
     }
 
     @Override
-    public String getCommandKey(String command) {
-        return null;
-    }
-
-    @Override
-    public void run(String command) {
+    public void run(String lastCommand) {
         View.printCategories(controller.getAllCategory());
-        this.parentMenu.run(command);
+        this.parentMenu.run(lastCommand);
     }
 
 }

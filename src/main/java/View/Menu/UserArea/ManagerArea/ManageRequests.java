@@ -8,53 +8,6 @@ public class ManageRequests extends Menu {
         super("Manage Requests", parentMenu);
     }
 
-    @Override
-    public String getCommandKey(String command) {
-        return null;
-    }
-
-    private Menu getDetails() {
-        return new Menu("Details", this) {
-            @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
-            public void run(String lastCommand) {
-                controller.requestDetails(1);
-            }
-        };
-    }
-
-    private Menu getAcceptRequest() {
-        return new Menu("Accept Request", this) {
-            @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
-            public void run(String lastCommand) {
-                controller.acceptRequest(1);
-            }
-        };
-    }
-
-    private Menu getDeclineRequest() {
-        return new Menu("Decline Request", this) {
-            @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
-            public void run(String lastCommand) {
-                controller.declineRequest(1);
-            }
-        };
-    }
-
     private void showRequests() {
 
     }
@@ -62,6 +15,21 @@ public class ManageRequests extends Menu {
     @Override
     public void run(String lastCommand) {
         this.showRequests();
-        super.run(lastCommand);
+        String command = scanner.nextLine().trim();
+        if (command.startsWith("details")) {
+            controller.requestDetails(1);
+            this.run("");
+        }
+        if (command.startsWith("accept")) {
+            controller.acceptRequest(1);
+            this.run("");
+        }
+        if (command.startsWith("decline")) {
+            controller.declineRequest(1);
+            this.run("");
+        }
+        if (command.equals("back")) {
+            this.parentMenu.run("");
+        }
     }
 }

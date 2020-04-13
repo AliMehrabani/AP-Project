@@ -11,16 +11,11 @@ public class Comments extends Menu {
     }
 
     @Override
-    public String getCommandKey(String command) {
-        return null;
-    }
-
-    @Override
     public void run(String lastCommand) {
-        String input = scanner.nextLine();
+        String command = scanner.nextLine().trim();
         String title;
         String content;
-        if (input.equals("Add comment")) {
+        if (command.equals("Add comment")) {
             System.out.println("Title:");
             title = scanner.nextLine();
             System.out.println("Content:");
@@ -28,7 +23,7 @@ public class Comments extends Menu {
             controller.addComments(product, title, content);
             this.parentMenu.run(lastCommand);
         }
-        if (input.equals("back")) {
+        if (command.equals("back")) {
             this.parentMenu.run(lastCommand);
         }
         //agar invalid bood chi?

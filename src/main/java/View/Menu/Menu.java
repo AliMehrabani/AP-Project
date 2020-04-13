@@ -62,7 +62,9 @@ public abstract class Menu {
         this.subMenus = subMenus;
     }
 
-    public abstract String getCommandKey(String command);
+    public String getCommandKey(String command) {
+        return "";
+    }
 
     public void run(String lastCommand) {
         String command = scanner.nextLine().trim();

@@ -12,11 +12,6 @@ public class GuestArea extends Menu {
     private Menu getLoginMenu() {
         return new Menu("Login Menu", this) {
             @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
             public void run(String lastCommand) {
                 controller.hasUserWithUsername("");
                 controller.isPasswordCorrect("");
@@ -28,11 +23,6 @@ public class GuestArea extends Menu {
 
     private Menu getRegisterMenu() {
         return new Menu("Sign Up Menu", this) {
-            @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
             @Override
             public void run(String lastCommand) {
                 controller.hasUserWithUsername("");

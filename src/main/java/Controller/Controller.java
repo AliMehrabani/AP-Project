@@ -169,6 +169,30 @@ public class Controller {
 
     }
 
+    public void removeProduct(long productId) {
+
+    }
+
+    public String showCategories() {
+        return "";
+    }
+
+    public double getBalance() {
+        return 0;
+    }
+
+    public String viewOff() {
+        return "";
+    }
+
+    public void editOff(String field, String newContent, long offId) {
+
+    }
+
+    public void addOff(String[] info) {
+
+    }
+
     public  void addComments(Product product, String title, String content) {
         //
     }

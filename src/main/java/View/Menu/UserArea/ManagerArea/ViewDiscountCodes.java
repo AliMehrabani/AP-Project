@@ -16,11 +16,6 @@ public class ViewDiscountCodes extends Menu {
     private Menu getViewDiscountCode() {
         return new Menu("View Discount Code", this) {
             @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
             public void run(String lastCommand) {
                 controller.viewDiscountCodes(1);
             }
@@ -30,11 +25,6 @@ public class ViewDiscountCodes extends Menu {
     private Menu getEditDiscountCode() {
         return new Menu("Edit Discount Code", this) {
             @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
             public void run(String lastCommand) {
                 controller.editDiscountCode(1);
             }
@@ -43,11 +33,6 @@ public class ViewDiscountCodes extends Menu {
 
     private Menu getRemoveDiscountCode() {
         return new Menu("Remove Discount Code", this) {
-            @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
             @Override
             public void run(String lastCommand) {
                 controller.removeDiscountCode(1);

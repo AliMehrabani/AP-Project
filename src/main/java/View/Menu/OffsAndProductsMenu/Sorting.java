@@ -15,28 +15,28 @@ public class Sorting extends Menu {
     }
 
     @Override
-    public void run(String command) {
-        String input = scanner.nextLine();
-        if (input.equals("show available sorts")) {
+    public void run(String lastCommand) {
+        String command = scanner.nextLine().trim();
+        if (command.equals("show available sorts")) {
             View.printAvailableSorting(controller.getAllAvailableSorting());
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("sort [an available sort]")) {
-            View.printSortedProduct(controller.sorting(input.split("\\s")[1]));
-            this.run(command);
+        if (command.equals("sort [an available sort]")) {
+            View.printSortedProduct(controller.sorting(command.split("\\s")[1]));
+            this.run(lastCommand);
         }
-        if (input.equals("current sort")) {
+        if (command.equals("current sort")) {
             View.printCurrnetSort(controller.getCurrentSort());
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("disable sort")) {
-            controller.disableSort(input.split("\\s")[2]);
+        if (command.equals("disable sort")) {
+            controller.disableSort(command.split("\\s")[2]);
             //bayad havasam bashe chi ro disable mikonam
             //bayad neshom bedam?
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("back")) {
-            this.parentMenu.run(command);
+        if (command.equals("back")) {
+            this.parentMenu.run(lastCommand);
         }
     }
 }

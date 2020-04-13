@@ -1,55 +1,53 @@
 package View.Menu.UserArea.SellerArea;
 
 import View.Menu.Menu;
-import View.View;
 
-public class ManageProducts extends Menu {
-
-    public ManageProducts(Menu parentMenu) {
-        super("Manage Products", parentMenu);
+public class ViewOffs extends Menu {
+    public ViewOffs(Menu parentMenu) {
+        super("View Offs", parentMenu);
     }
 
     @Override
     public String getCommandKey(String command) {
-        return null;
+        return super.getCommandKey(command);
     }
 
     private Menu getView() {
-        return new Menu("view",this) {
+        return new Menu("View Off", this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewSellerProducts();
-                View.printString("");
+                controller.viewOff();
+            }
+        };
+    }
+
+    private Menu getEditOff() {
+        return new Menu("Edit Off", this) {
+            @Override
+            public void run(String lastCommand) {
+                controller.editOff("", "", 1);
                 this.parentMenu.run("");
             }
         };
     }
 
-    private Menu getViewBuyers() {
-        return new Menu("View Buyers", this) {
+    private Menu getAddOff() {
+        return new Menu("Add Off", this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewProductBuyers();
+                controller.addOff(new String[3]);
                 this.parentMenu.run("");
             }
         };
     }
 
-    private Menu getEdit() {
-        return new Menu("Edit", this) {
-            @Override
-            public void run(String lastCommand) {
-                controller.editProduct("", "", 1);
-                this.parentMenu.run("");
-            }
-        };
-    }
+    private void showOffs(){
 
-    private void showProducts(){}
+    }
 
     @Override
     public void run(String lastCommand) {
-        this.showProducts();
+        this.showOffs();
         super.run(lastCommand);
     }
 }

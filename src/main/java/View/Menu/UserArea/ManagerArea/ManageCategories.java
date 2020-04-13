@@ -8,51 +8,12 @@ public class ManageCategories extends Menu {
         super("Manage Categories", parentMenu);
     }
 
-    @Override
-    public String getCommandKey(String command) {
-        return null;
+    private void doEditCategory(String command) {
+        controller.editCategory("");
     }
 
-    private Menu getEditCategory() {
-        return new Menu("Edit Category", this) {
-            @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
-            public void run(String lastCommand) {
-                controller.editCategory("");
-            }
-        };
-    }
-
-    private Menu getAddCategory() {
-        return new Menu("Add Category", this) {
-            @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
-            public void run(String lastCommand) {
-                controller.addCategory("");
-            }
-        };
-    }
-
-    private Menu getRemoveCategory() {
-        return new Menu("Remove Category", this) {
-            @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
-            public void run(String lastCommand) {
-                controller.removeCategory("");
-            }
-        };
+    private void doAddCategory(String command) {
+        controller.addCategory("");
     }
 
     private void showCategories() {
@@ -62,6 +23,21 @@ public class ManageCategories extends Menu {
     @Override
     public void run(String lastCommand) {
         this.showCategories();
-        super.run(lastCommand);
+        String command = scanner.nextLine().trim();
+        if (command.startsWith("remove")) {
+            controller.removeCategory("");
+            this.run("");
+        }
+        if (command.startsWith("add")) {
+            this.doAddCategory(command);
+            this.run("");
+        }
+        if (command.startsWith("edit")) {
+            this.doEditCategory(command);
+            this.run("");
+        }
+        if (command.equals("back")){
+            this.parentMenu.run("");
+        }
     }
 }

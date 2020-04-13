@@ -9,32 +9,27 @@ public class Filtering extends Menu {
     }
 
     @Override
-    public String getCommandKey(String command) {
-        return null;
-    }
-
-    @Override
-    public void run(String command) {
-        String input = scanner.nextLine();
-        if (input.equals("show available filters")) {
+    public void run(String lastCommand) {
+        String command = scanner.nextLine().trim();
+        if (command.equals("show available filters")) {
             View.printAvailableFilters(controller.getAllAvailableFilters());
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("filter [an available filter]")) {
-            View.printFilterdProduct(controller.filtering(input.split("\\s")[1]));
-            this.run(command);
+        if (command.equals("filter [an available filter]")) {
+            View.printFilterdProduct(controller.filtering(command.split("\\s")[1]));
+            this.run(lastCommand);
         }
-        if (input.equals("current filters")) {
+        if (command.equals("current filters")) {
             View.printCurrentFilter(controller.getCurrentFilter());
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("disable filter [a selected filter]")) {
-            controller.disableFilter(input.split("\\s")[1]);
+        if (command.equals("disable filter [a selected filter]")) {
+            controller.disableFilter(command.split("\\s")[1]);
             //bayad badesh neshon bedam?
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("back")) {
-            this.parentMenu.run(command);
+        if (command.equals("back")) {
+            this.parentMenu.run(lastCommand);
         }
     }
 }

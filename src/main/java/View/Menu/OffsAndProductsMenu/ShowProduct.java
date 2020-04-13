@@ -18,32 +18,27 @@ public class ShowProduct extends Menu {
     }
 
     @Override
-    public String getCommandKey(String command) {
-        return null;
-    }
-
-    @Override
-    public void run(String command) {
-        long productId = Long.parseLong(command.split("\\s")[2]);
-        String input = scanner.nextLine();
-        if (input.equals("digest")) {
+    public void run(String lastCommand) {
+        long productId = Long.parseLong(lastCommand.split("\\s")[2]);
+        String command = scanner.nextLine().trim();
+        if (command.equals("digest")) {
             View.printProductSummery(controller.getProductById(productId));
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("attributes")) {
+        if (command.equals("attributes")) {
             View.printAttributes(controller.getProductById(productId));
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("compare [productID]")) {
-            View.printCompareProduct(controller.getProductById(productId), controller.getProductById(Long.parseLong(input.split("\\s")[2])));
-            this.run(command);
+        if (command.equals("compare [productID]")) {
+            View.printCompareProduct(controller.getProductById(productId), controller.getProductById(Long.parseLong(command.split("\\s")[2])));
+            this.run(lastCommand);
         }
-        if (input.equals("Comments")) {
+        if (command.equals("Comments")) {
             new Comments("Comments", this);
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("back")) {
-            this.parentMenu.run(command);
+        if (command.equals("back")) {
+            this.parentMenu.run(lastCommand);
         }
     }
 }

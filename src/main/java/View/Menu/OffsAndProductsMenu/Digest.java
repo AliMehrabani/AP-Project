@@ -11,29 +11,24 @@ public class Digest extends Menu {
     }
 
     @Override
-    public String getCommandKey(String command) {
-        return null;
-    }
-
-    @Override
-    public void run(String command) {
-        long productId = Long.parseLong(command.split("\\s")[2]);
-        String input = scanner.nextLine();
-        if (input.equals("add to cart")) {
+    public void run(String lastCommand) {
+        long productId = Long.parseLong(lastCommand.split("\\s")[2]);
+        String command = scanner.nextLine().trim();
+        if (command.equals("add to cart")) {
             String type=controller.getCurrentUserType();
             if (type.equals("Geust")){
                 new GuestArea(this);
             }
             //havasam bashe ke Guest ham mitone sabad dashte bashe.
             controller.addToCart(controller.getProductById(productId));
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("select seller [seller_username]")) {
+        if (command.equals("select seller [seller_username]")) {
             //che konam?
-            this.run(command);
+            this.run(lastCommand);
         }
-        if (input.equals("back")) {
-            this.parentMenu.run(command);
+        if (command.equals("back")) {
+            this.parentMenu.run(lastCommand);
         }
     }
 }

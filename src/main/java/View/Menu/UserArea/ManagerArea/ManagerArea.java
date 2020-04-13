@@ -16,11 +16,6 @@ public class ManagerArea extends Menu {
     private Menu getCreateDiscountCode() {
         return new Menu("Create Discount Code", this) {
             @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
             public void run(String lastCommand) {
                 controller.createDiscountCode(new String[3]);
             }

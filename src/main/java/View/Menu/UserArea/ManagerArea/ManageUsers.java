@@ -17,11 +17,6 @@ public class ManageUsers extends Menu {
     private Menu getView() {
         return new Menu("View", this) {
             @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
             public void run(String lastCommand) {
                 controller.hasUserWithUsername(lastCommand);
                 controller.viewUser("");
@@ -33,11 +28,6 @@ public class ManageUsers extends Menu {
     private Menu getDeleteUser() {
         return new Menu("Delete User", this) {
             @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
             public void run(String lastCommand) {
                 controller.deleteUser(lastCommand);
                 this.parentMenu.run("");
@@ -48,11 +38,6 @@ public class ManageUsers extends Menu {
     private Menu getChangeUserType() {
         return new Menu("Change User Type", this) {
             @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
-            @Override
             public void run(String lastCommand) {
                 controller.changeUserType("", "");
                 this.parentMenu.run("");
@@ -62,11 +47,6 @@ public class ManageUsers extends Menu {
 
     private Menu getCreateManagerProfile() {
         return new Menu("Create Manager Profile", this) {
-            @Override
-            public String getCommandKey(String command) {
-                return null;
-            }
-
             @Override
             public void run(String lastCommand) {
                 controller.createManagerProfile(new String[3]);

@@ -9,11 +9,6 @@ public class ShowOffProducts extends Menu {
     }
 
     @Override
-    public String getCommandKey(String command) {
-        return null;
-    }
-
-    @Override
     public void run(String lastCommand) {
         View.printAllOffProduct(controller.getAllOffProduct());
         this.parentMenu.run(lastCommand);
