@@ -15,7 +15,7 @@ public abstract class Menu {
     protected Menu parentMenu;
     public static Scanner scanner;
     protected static Controller controller;
-    protected static ArrayList<Menu> allMenus;
+    protected static ArrayList<Menu> allMenus = new ArrayList<>();
 
     public Menu(String name, Menu parentMenu) {
         this.name = name;

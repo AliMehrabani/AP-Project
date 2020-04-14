@@ -31,7 +31,7 @@ public class View {
         //
     }
 
-    public static void printCurrnetSort(ArrayList<String> sort){
+    public static void printCurrentSort(ArrayList<String> sort){
         //
     }
 
