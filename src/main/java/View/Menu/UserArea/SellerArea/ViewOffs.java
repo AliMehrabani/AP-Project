@@ -16,7 +16,7 @@ public class ViewOffs extends Menu {
         return new Menu("View Off", this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewOff();
+                controller.viewOff(1);
             }
         };
     }

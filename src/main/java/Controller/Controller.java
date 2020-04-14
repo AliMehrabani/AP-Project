@@ -207,4 +207,44 @@ public class Controller {
         }
         return  sortedOrFiltered;
     }
+
+    public double getBalance() {
+        return 0;
+    }
+
+    public String viewCostumerDiscountCodes() {
+        return "";
+    }
+
+    public String showProducts() {
+        return "";
+    }
+
+    public void removeFromCart(long ProductId) {
+    }
+
+    public double getTotalPrice() {
+        return 0;
+    }
+
+    public String viewDiscountCode(long discountCode) {
+        return "";
+    }
+
+    public void removeProduct(long productId) {
+    }
+
+    public String showCategories() {
+        return "";
+    }
+
+    public String viewOff(long offId) {
+        return "";
+    }
+
+    public void editOff(String field, String newContent, long offId) {
+    }
+
+    public void addOff(String[] info) {
+    }
 }
