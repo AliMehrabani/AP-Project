@@ -63,17 +63,5 @@ public abstract class User {
         this.password = password;
     }
 
-    public static User getUserByUsername(String username) {
-        return null;
-    }
-
-    public static void deleteUser(String username) {
-
-    }
-
-    public static void addUser(User user) {
-
-    }
-
     public abstract String getType();
 }

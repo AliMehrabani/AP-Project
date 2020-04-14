@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class Product {
     private long productId;
     private String name;
-    private ArrayList<String> allbrands;
+    private ArrayList<String> allBrands;
     private double price;
     private ArrayList<Seller> allSellers;
     private int remainedNumber;
@@ -26,9 +26,9 @@ public class Product {
     private Date addProductDate;
 
     public Product(String name, long productId, String brand, double price, String explanation, Category parentCategory, Seller seller) {
-        allbrands = new ArrayList<>();
+        allBrands = new ArrayList<>();
         allSellers = new ArrayList<>();
-        allbrands.add(brand);
+        allBrands.add(brand);
         this.addSeller(seller);
         allComments = new ArrayList<>();
         this.explanation = explanation;
@@ -93,7 +93,7 @@ public class Product {
     }
 
     public void addBrand(String brand) {
-        allbrands.add(brand);
+        allBrands.add(brand);
     }
 
     public void setDiscountPercentage(double discountPercentage) {

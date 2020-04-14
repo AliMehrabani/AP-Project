@@ -3,7 +3,7 @@ package Models;
 import Models.User.User;
 
 public class Score {
-    private User userWhoBuy;
+    private User Buyer;
     private int score;
     private Product product;
 
@@ -11,12 +11,12 @@ public class Score {
 
     }
 
-    public User getUserWhoBuy() {
-        return userWhoBuy;
+    public User getBuyer() {
+        return Buyer;
     }
 
-    public void setUserWhoBuy(User userWhoBuyed) {
-        this.userWhoBuy = userWhoBuyed;
+    public void setBuyer(User buyer) {
+        this.Buyer = buyer;
     }
 
     public int getScore() {

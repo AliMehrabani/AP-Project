@@ -37,7 +37,6 @@ public class Controller {
     }
 
     public String loginAccount(String username, String password) {
-        User.getUserByUsername("");
         return "";
     }
 
@@ -89,7 +88,6 @@ public class Controller {
     }
 
     public void deleteUser(String username) {
-        User.deleteUser(username);
     }
 
     public void changeUserType(String username, String newType) {
@@ -97,7 +95,6 @@ public class Controller {
     }
 
     public void createManagerProfile(String[] info) {
-        User.addUser(null);
     }
 
     public void deleteProduct(long productID) {
