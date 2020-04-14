@@ -23,6 +23,7 @@ public class View {
     public static void printFilterdProduct(ArrayList<Product> products){
         //
     }
+
     public static void printCurrentFilter(ArrayList<String> filters){
         //
     }

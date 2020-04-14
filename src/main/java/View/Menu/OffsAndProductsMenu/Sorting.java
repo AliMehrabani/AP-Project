@@ -30,7 +30,7 @@ public class Sorting extends Menu {
             this.run(lastCommand);
         }
         if (command.equals("current sort")) {
-            View.printCurrnetSort(controller.getCurrentSort());
+            View.printCurrentSort(controller.getCurrentSort());
             //az OffAndProductMenuController ham mishe gereft
 
             this.run(lastCommand);

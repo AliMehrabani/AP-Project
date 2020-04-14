@@ -95,6 +95,7 @@ public class Controller {
     }
 
     public void createManagerProfile(String[] info) {
+
     }
 
     public void deleteProduct(long productID) {
