@@ -5,7 +5,6 @@ import View.Menu.Menu;
 import java.util.HashMap;
 
 public class OffsPage extends Menu {
-    private long productId;
 
     public OffsPage(Menu parentMenu) {
         super("Offs", parentMenu);

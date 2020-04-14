@@ -20,6 +20,7 @@ public class Digest extends Menu {
                 new GuestArea(this);
             }
             //havasam bashe ke Guest ham mitone sabad dashte bashe.
+
             controller.addToCart(controller.getProductById(productId));
             this.run(lastCommand);
         }

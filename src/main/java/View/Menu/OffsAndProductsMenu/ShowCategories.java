@@ -11,6 +11,7 @@ public class ShowCategories extends Menu {
     @Override
     public void run(String lastCommand) {
         View.printCategories(controller.getAllCategory());
+        //az OffAndProductMenuController ham mishe gereft
         this.parentMenu.run(lastCommand);
     }
 

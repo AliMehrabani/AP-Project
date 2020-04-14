@@ -13,18 +13,26 @@ public class Filtering extends Menu {
         String command = scanner.nextLine().trim();
         if (command.equals("show available filters")) {
             View.printAvailableFilters(controller.getAllAvailableFilters());
+            //az OffAndProductMenuController ham mishe gereft
+
             this.run(lastCommand);
         }
         if (command.equals("filter [an available filter]")) {
             View.printFilterdProduct(controller.filtering(command.split("\\s")[1]));
+            //az OffAndProductMenuController ham mishe gereft
+
             this.run(lastCommand);
         }
         if (command.equals("current filters")) {
             View.printCurrentFilter(controller.getCurrentFilter());
+            //az OffAndProductMenuController ham mishe gereft
+
             this.run(lastCommand);
         }
         if (command.equals("disable filter [a selected filter]")) {
             controller.disableFilter(command.split("\\s")[1]);
+            //az OffAndProductMenuController ham mishe gereft
+
             //bayad badesh neshon bedam?
             this.run(lastCommand);
         }

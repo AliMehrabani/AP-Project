@@ -11,10 +11,6 @@ public class ShowProduct extends Menu {
 
     public ShowProduct(Menu parentMenu) {
         super("Show product", parentMenu);
-        HashMap<String, Menu> subMenus = new HashMap<String, Menu>();
-        subMenus.put("Digest", new Digest(this));
-        subMenus.put("Comments", new Comments(this));
-        this.setSubMenus(subMenus);
     }
 
     @Override
@@ -23,14 +19,23 @@ public class ShowProduct extends Menu {
         String command = scanner.nextLine().trim();
         if (command.equals("digest")) {
             View.printProductSummery(controller.getProductById(productId));
+            //bayad havasm bashe ke controller bayad ye product jadid bi in pas bede
+
+            new Digest(this);
+            //bayad in line tarif beshe vali baraye tamizi in karo kardam
+
             this.run(lastCommand);
         }
         if (command.equals("attributes")) {
             View.printAttributes(controller.getProductById(productId));
+            //bayad havasm bashe ke controller bayad ye product jadid bi in pas bede
+
             this.run(lastCommand);
         }
         if (command.equals("compare [productID]")) {
             View.printCompareProduct(controller.getProductById(productId), controller.getProductById(Long.parseLong(command.split("\\s")[2])));
+            //bayad havasm bashe ke controller bayad ye product jadid bi in pas bede
+
             this.run(lastCommand);
         }
         if (command.equals("Comments")) {
