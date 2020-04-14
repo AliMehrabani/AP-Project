@@ -3,10 +3,16 @@ package View.Menu.UserArea;
 import View.Menu.Menu;
 import View.View;
 
+import java.util.HashMap;
+
 public class GuestArea extends Menu {
 
     public GuestArea(Menu parentMenu) {
         super("Guest Area", parentMenu);
+        HashMap<String, Menu> subMenus = new HashMap<>();
+        subMenus.put("Login Menu", getLoginMenu());
+        subMenus.put("Register Menu", getRegisterMenu());
+        this.setSubMenus(subMenus);
     }
 
     private Menu getLoginMenu() {

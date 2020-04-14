@@ -78,9 +78,10 @@ public class Controller {
         return currentUser;
     }
 
-    public void editField(String field, String newContent) {
+    public String editField(String field, String newContent) {
         currentUser.setFirstName(newContent);
         currentUser.setLastName(newContent);
+        return "";
     }
 
     public String viewUser(String username) {
@@ -105,10 +106,6 @@ public class Controller {
 
     public void createDiscountCode(String[] info) {
         DiscountCode.addDiscountCode(null);
-    }
-
-    public void viewDiscountCodes(long code) {
-
     }
 
     public void editDiscountCode(long code) {

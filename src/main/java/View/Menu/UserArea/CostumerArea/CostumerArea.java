@@ -1,11 +1,22 @@
 package View.Menu.UserArea.CostumerArea;
 
 import View.Menu.Menu;
+import View.Menu.UserArea.ViewPersonalInfo;
+
+import java.util.HashMap;
 
 public class CostumerArea extends Menu {
 
     public CostumerArea(Menu parentMenu) {
         super("Costumer Area", parentMenu);
+        HashMap<String, Menu> subMenus = new HashMap<>();
+        subMenus.put("View Balance", getViewBalance());
+        subMenus.put("View Discount Codes", getViewDiscountCodes());
+        subMenus.put("View Personal Info", new ViewPersonalInfo(this));
+        subMenus.put("Purchase", new Purchase(this));
+        subMenus.put("View Cart", new ViewCart(this));
+        subMenus.put("View Orders", new ViewOrders(this));
+        this.setSubMenus(subMenus);
     }
 
     @Override

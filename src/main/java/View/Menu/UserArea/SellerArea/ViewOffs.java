@@ -2,9 +2,16 @@ package View.Menu.UserArea.SellerArea;
 
 import View.Menu.Menu;
 
+import java.util.HashMap;
+
 public class ViewOffs extends Menu {
     public ViewOffs(Menu parentMenu) {
         super("View Offs", parentMenu);
+        HashMap<String, Menu> subMenus = new HashMap<>();
+        subMenus.put("View Off", getView());
+        subMenus.put("Add Off", getAddOff());
+        subMenus.put("Edit Off", getEditOff());
+        this.setSubMenus(subMenus);
     }
 
     @Override

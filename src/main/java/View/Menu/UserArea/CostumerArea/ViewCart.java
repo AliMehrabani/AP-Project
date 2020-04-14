@@ -1,11 +1,22 @@
 package View.Menu.UserArea.CostumerArea;
 
 import View.Menu.Menu;
+import View.Menu.OffsAndProductsMenu.ShowProduct;
+
+import java.util.HashMap;
 
 public class ViewCart extends Menu {
 
     public ViewCart(Menu parentMenu) {
         super("View Cart", parentMenu);
+        HashMap<String, Menu> subMenus = new HashMap<>();
+        subMenus.put("Show Products", getShowProducts());
+        subMenus.put("Increase Product", getIncreaseProduct());
+        subMenus.put("Decrease Product", getDecreaseProduct());
+        subMenus.put("Show Total Price", getShowTotalPrice());
+        subMenus.put("Purchase", new Purchase(this));
+        subMenus.put("Show Product", new ShowProduct(this));
+        this.setSubMenus(subMenus);
     }
 
     @Override

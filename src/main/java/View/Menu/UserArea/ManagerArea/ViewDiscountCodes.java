@@ -2,10 +2,17 @@ package View.Menu.UserArea.ManagerArea;
 
 import View.Menu.Menu;
 
+import java.util.HashMap;
+
 public class ViewDiscountCodes extends Menu {
 
     public ViewDiscountCodes(Menu parentMenu) {
         super("View Discount Codes", parentMenu);
+        HashMap<String, Menu> subMenus = new HashMap<>();
+        subMenus.put("View Discount Code", getViewDiscountCode());
+        subMenus.put("Edit Discount Code", getEditDiscountCode());
+        subMenus.put("Remove Discount Code", getRemoveDiscountCode());
+        this.setSubMenus(subMenus);
     }
 
     @Override

@@ -1,12 +1,20 @@
 package View.Menu.UserArea.SellerArea;
 
 import View.Menu.Menu;
+import View.Menu.UserArea.ViewPersonalInfo;
 import View.View;
+
+import java.util.HashMap;
 
 public class ManageProducts extends Menu {
 
     public ManageProducts(Menu parentMenu) {
         super("Manage Products", parentMenu);
+        HashMap<String, Menu> subMenus = new HashMap<>();
+        subMenus.put("View Product", getView());
+        subMenus.put("View Buyers", getViewBuyers());
+        subMenus.put("Edit Product", getEdit());
+        this.setSubMenus(subMenus);
     }
 
     @Override

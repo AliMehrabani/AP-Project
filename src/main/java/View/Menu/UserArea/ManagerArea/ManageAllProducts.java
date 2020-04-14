@@ -4,12 +4,12 @@ import View.Menu.Menu;
 
 public class ManageAllProducts extends Menu {
 
-    public ManageAllProducts(String name, Menu parentMenu) {
+    public ManageAllProducts(Menu parentMenu) {
         super("Manage All Products", parentMenu);
     }
 
     private void showAllProducts() {
-
+        controller.getAllProduct();
     }
 
     @Override

@@ -3,10 +3,18 @@ package View.Menu.UserArea.ManagerArea;
 import View.Menu.Menu;
 import View.View;
 
+import java.util.HashMap;
+
 public class ManageUsers extends Menu {
 
-    public ManageUsers(String name, Menu parentMenu) {
-        super(name, parentMenu);
+    public ManageUsers(Menu parentMenu) {
+        super("Manage Users", parentMenu);
+        HashMap<String, Menu> subMenus = new HashMap<>();
+        subMenus.put("View Users", getView());
+        subMenus.put("Delete User", getDeleteUser());
+        subMenus.put("Change User Type", getChangeUserType());
+        subMenus.put("Create Manager Profile", getCreateManagerProfile());
+        this.setSubMenus(subMenus);
     }
 
     @Override

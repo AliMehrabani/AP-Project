@@ -18,12 +18,6 @@
                 </configuration>
             </plugin>
         </plugins>
-
-        <resources>
-            <resource>
-                <directory> allUsers.txt </directory>
-            </resource>
-        </resources>
     </build>
 
 

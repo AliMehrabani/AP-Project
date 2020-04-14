@@ -1,13 +1,31 @@
 package View.Menu.UserArea.SellerArea;
 
 import View.Menu.Menu;
+import View.Menu.UserArea.CostumerArea.Purchase;
+import View.Menu.UserArea.CostumerArea.ViewCart;
+import View.Menu.UserArea.CostumerArea.ViewOrders;
+import View.Menu.UserArea.ManagerArea.ManageUsers;
+import View.Menu.UserArea.ViewPersonalInfo;
 import View.View;
 import com.sun.jdi.event.MethodEntryEvent;
+
+import java.util.HashMap;
 
 public class SellerArea extends Menu {
 
     public SellerArea(Menu parentMenu) {
         super("Seller Area", parentMenu);
+        HashMap<String, Menu> subMenus = new HashMap<>();
+        subMenus.put("View Balance", getViewBalance());
+        subMenus.put("View Company Information", getViewCompanyInformation());
+        subMenus.put("View Sales History", getViewSalesHistory());
+        subMenus.put("Add Product", getAddProduct());
+        subMenus.put("Remove Product", getRemoveProduct());
+        subMenus.put("Show Categories", getShowCategories());
+        subMenus.put("View Personal Info", new ViewPersonalInfo(this));
+        subMenus.put("Manage Products", new ManageProducts(this));
+        subMenus.put("View Offs", new ViewOffs(this));
+        this.setSubMenus(subMenus);
     }
 
     @Override
