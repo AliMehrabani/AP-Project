@@ -1,5 +1,6 @@
 package View.Menu.UserArea.ManagerArea;
 
+import Controller.Controller;
 import Controller.ManagerAreaController;
 import View.Menu.Menu;
 import View.Menu.UserArea.ViewPersonalInfo;
@@ -12,6 +13,7 @@ public class ManagerArea extends Menu {
         super("Manager Area", parentMenu);
         HashMap<String, Menu> subMenus = new HashMap<>();
         subMenus.put("Create Discount Code", getCreateDiscountCode());
+        subMenus.put("Logout", getLogout());
         subMenus.put("Manage All Products", new ManageAllProducts(this));
         subMenus.put("Manage Categories", new ManageCategories(this));
         subMenus.put("Manage Requests", new ManageRequests(this));
@@ -35,8 +37,18 @@ public class ManagerArea extends Menu {
         };
     }
 
+    private Menu getLogout() {
+        return new Menu("Logout", this) {
+            @Override
+            public void run(String lastCommand) {
+                Controller.logout();
+                allMenus.get(0).run("");
+            }
+        };
+    }
+
     public void showSpecifications() {
-        controller.getCurrentUser();
+        Controller.getCurrentUser();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package View.Menu.UserArea.ManagerArea;
 
+import Controller.Controller;
 import Controller.ManagerAreaController;
 import View.Menu.Menu;
 
@@ -13,6 +14,7 @@ public class ViewDiscountCodes extends Menu {
         subMenus.put("View Discount Code", getViewDiscountCode());
         subMenus.put("Edit Discount Code", getEditDiscountCode());
         subMenus.put("Remove Discount Code", getRemoveDiscountCode());
+        subMenus.put("Logout", getLogout());
         this.setSubMenus(subMenus);
     }
 
@@ -44,6 +46,16 @@ public class ViewDiscountCodes extends Menu {
             @Override
             public void run(String lastCommand) {
                 ManagerAreaController.removeDiscountCode(1);
+            }
+        };
+    }
+
+    private Menu getLogout() {
+        return new Menu("Logout", this) {
+            @Override
+            public void run(String lastCommand) {
+                Controller.logout();
+                allMenus.get(0).run("");
             }
         };
     }

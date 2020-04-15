@@ -1,5 +1,6 @@
 package View.Menu.UserArea.ManagerArea;
 
+import Controller.Controller;
 import Controller.ManagerAreaController;
 import View.Menu.Menu;
 
@@ -28,6 +29,10 @@ public class ManageRequests extends Menu {
         if (command.startsWith("decline")) {
             ManagerAreaController.declineRequest(1);
             this.run("");
+        }
+        if (lastCommand.equals("logout")) {
+            Controller.logout();
+            allMenus.get(0).run("");
         }
         if (command.equals("back")) {
             this.parentMenu.run("");

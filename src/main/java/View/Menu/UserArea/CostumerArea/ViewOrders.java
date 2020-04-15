@@ -1,5 +1,6 @@
 package View.Menu.UserArea.CostumerArea;
 
+import Controller.Controller;
 import View.Menu.Menu;
 
 public class ViewOrders extends Menu {
@@ -34,6 +35,10 @@ public class ViewOrders extends Menu {
         String command = scanner.nextLine().trim();
         if (command.startsWith("show order")) {
             this.showOrderPage(1);
+        }
+        if (lastCommand.equals("logout")) {
+            Controller.logout();
+            allMenus.get(0).run("");
         }
         if (command.equals("back")) {
             this.parentMenu.run("");

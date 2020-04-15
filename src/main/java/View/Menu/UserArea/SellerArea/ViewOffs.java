@@ -1,5 +1,6 @@
 package View.Menu.UserArea.SellerArea;
 
+import Controller.Controller;
 import Controller.SellerAreaController;
 import View.Menu.Menu;
 
@@ -12,6 +13,7 @@ public class ViewOffs extends Menu {
         subMenus.put("View Off", getView());
         subMenus.put("Add Off", getAddOff());
         subMenus.put("Edit Off", getEditOff());
+        subMenus.put("Logout", getLogout());
         this.setSubMenus(subMenus);
     }
 
@@ -51,6 +53,16 @@ public class ViewOffs extends Menu {
 
     private void showOffs(){
 
+    }
+
+    private Menu getLogout() {
+        return new Menu("Logout", this) {
+            @Override
+            public void run(String lastCommand) {
+                Controller.logout();
+                allMenus.get(0).run("");
+            }
+        };
     }
 
     @Override

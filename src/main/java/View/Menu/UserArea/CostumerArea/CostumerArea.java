@@ -1,5 +1,6 @@
 package View.Menu.UserArea.CostumerArea;
 
+import Controller.Controller;
 import Controller.CostumerAreaController;
 import View.Menu.Menu;
 import View.Menu.UserArea.ViewPersonalInfo;
@@ -17,6 +18,7 @@ public class CostumerArea extends Menu {
         subMenus.put("Purchase", new Purchase(this));
         subMenus.put("View Cart", new ViewCart(this));
         subMenus.put("View Orders", new ViewOrders(this));
+        subMenus.put("Logout", getLogout());
         this.setSubMenus(subMenus);
     }
 
@@ -29,7 +31,7 @@ public class CostumerArea extends Menu {
         return new Menu("View Balance", this) {
             @Override
             public void run(String lastCommand) {
-                controller.getBalance();
+                Controller.getBalance();
                 this.parentMenu.run("");
             }
         };
@@ -45,8 +47,18 @@ public class CostumerArea extends Menu {
         };
     }
 
+    private Menu getLogout() {
+        return new Menu("Logout", this) {
+            @Override
+            public void run(String lastCommand) {
+                Controller.logout();
+                allMenus.get(0).run("");
+            }
+        };
+    }
+
     public void showSpecifications() {
-        controller.getCurrentUser();
+        Controller.getCurrentUser();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package View.Menu.UserArea.ManagerArea;
 
+import Controller.Controller;
 import Controller.ManagerAreaController;
 import View.Menu.Menu;
 
@@ -36,6 +37,10 @@ public class ManageCategories extends Menu {
         if (command.startsWith("edit")) {
             this.doEditCategory(command);
             this.run("");
+        }
+        if (lastCommand.equals("logout")) {
+            Controller.logout();
+            allMenus.get(0).run("");
         }
         if (command.equals("back")){
             this.parentMenu.run("");

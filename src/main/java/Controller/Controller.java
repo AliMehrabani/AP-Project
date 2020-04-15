@@ -62,6 +62,15 @@ public class Controller {
         return false;
     }
 
+    public static void addToCart(Product product) {
+        cart.add(product);
+        //check beshe.
+    }
+
+    public static void logout() {
+
+    }
+
 
 
     public ArrayList<Product> getAllProduct() {

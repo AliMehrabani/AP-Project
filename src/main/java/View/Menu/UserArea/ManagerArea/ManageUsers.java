@@ -1,5 +1,6 @@
 package View.Menu.UserArea.ManagerArea;
 
+import Controller.Controller;
 import Controller.ManagerAreaController;
 import View.Menu.Menu;
 import View.View;
@@ -14,6 +15,7 @@ public class ManageUsers extends Menu {
         subMenus.put("View Users", getView());
         subMenus.put("Delete User", getDeleteUser());
         subMenus.put("Change User Type", getChangeUserType());
+        subMenus.put("Logout", getLogout());
         subMenus.put("Create Manager Profile", getCreateManagerProfile());
         this.setSubMenus(subMenus);
     }
@@ -27,7 +29,7 @@ public class ManageUsers extends Menu {
         return new Menu("View", this) {
             @Override
             public void run(String lastCommand) {
-                controller.hasUserWithUsername(lastCommand);
+                Controller.hasUserWithUsername(lastCommand);
                 ManagerAreaController.viewUser("");
                 View.printString("");
             }
@@ -59,6 +61,16 @@ public class ManageUsers extends Menu {
             @Override
             public void run(String lastCommand) {
                 ManagerAreaController.createManagerProfile(new String[3]);
+            }
+        };
+    }
+
+    private Menu getLogout() {
+        return new Menu("Logout", this) {
+            @Override
+            public void run(String lastCommand) {
+                Controller.logout();
+                allMenus.get(0).run("");
             }
         };
     }

@@ -20,9 +20,4 @@ public class CostumerAreaController {
     public static double getTotalPrice() {
         return 0;
     }
-
-    public static void addToCart(Product product) {
-        cart.add(product);
-        //check beshe.
-    }
 }

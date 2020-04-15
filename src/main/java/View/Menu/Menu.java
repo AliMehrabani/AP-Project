@@ -14,43 +14,13 @@ public abstract class Menu {
     protected HashMap<String, Menu> subMenus;
     protected Menu parentMenu;
     public static Scanner scanner;
-    protected static Controller controller;
     protected static ArrayList<Menu> allMenus = new ArrayList<>();
 
     public Menu(String name, Menu parentMenu) {
         this.name = name;
         this.parentMenu = parentMenu;
         this.subMenus = new HashMap<>();
-        this.subMenus.put("Login Menu", getLoginMenu());
-        this.subMenus.put("Register Menu", getRegisterMenu());
         allMenus.add(this);
-    }
-
-    private Menu getLoginMenu() {
-        return new Menu("Login Menu", this) {
-            @Override
-            public void run(String lastCommand) {
-                controller.hasUserWithUsername("");
-                controller.isPasswordCorrect("");
-                View.printString(controller.loginAccount("", ""));
-                this.parentMenu.run(lastCommand);
-            }
-        };
-    }
-
-    private Menu getRegisterMenu() {
-        return new Menu("Sign Up Menu", this) {
-            @Override
-            public void run(String lastCommand) {
-                controller.hasUserWithUsername("");
-                View.printString(controller.createAccount(new String[3]));
-                this.parentMenu.run(lastCommand);
-            }
-        };
-    }
-
-    public static void setController(Controller controller) {
-        Menu.controller = controller;
     }
 
     public static void setScanner(Scanner scanner) {
@@ -82,6 +52,10 @@ public abstract class Menu {
             show += "back";
         }
         View.printString(show);
+    }
+
+    public void setSubMenus(HashMap<String, Menu> subMenus) {
+        this.subMenus = subMenus;
     }
 
     public String getCommandKey(String command) {

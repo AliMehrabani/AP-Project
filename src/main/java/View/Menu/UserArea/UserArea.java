@@ -1,5 +1,6 @@
 package View.Menu.UserArea;
 
+import Controller.Controller;
 import View.Menu.Menu;
 import View.Menu.UserArea.CostumerArea.CostumerArea;
 import View.Menu.UserArea.ManagerArea.ManagerArea;
@@ -20,16 +21,16 @@ public class UserArea extends Menu {
 
     @Override
     public String getCommandKey(String command) {
-        if (controller.getCurrentUserType().equals("Guest")) {
+        if (Controller.getCurrentUserType().equals("Guest")) {
             return  "Guest Area";
         }
-        if (controller.getCurrentUserType().equals("Costumer")) {
+        if (Controller.getCurrentUserType().equals("Costumer")) {
             return  "Costumer Area";
         }
-        if (controller.getCurrentUserType().equals("Seller")) {
+        if (Controller.getCurrentUserType().equals("Seller")) {
             return  "Seller Area";
         }
-        if (controller.getCurrentUserType().equals("Manager")) {
+        if (Controller.getCurrentUserType().equals("Manager")) {
             return  "Manager Area";
         }
         return null;
