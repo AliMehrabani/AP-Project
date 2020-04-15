@@ -4,7 +4,6 @@ import Models.User.Seller;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 public class Product {
     private long productId;
@@ -20,8 +19,13 @@ public class Product {
 
     private enum productStatus {REVIEWFORMAKE, REVIEWFOREDIT, ACCEPTED}
 
-    private double discountPercentage;
+    private Off off;
+    private boolean doesItHaveOff;
+    private double offPercentage;
+
+    private DiscountCode discountCode;
     private boolean doesItHaveDiscount;
+    private double discountPercentage;
     private int numberOfView;
     private Date addProductDate;
 
@@ -38,8 +42,12 @@ public class Product {
         this.productId = productId;
         this.price = price;
         this.parentCategory = parentCategory;
-        this.discountPercentage = 0;
-        this.doesItHaveDiscount = false;
+        this.off=null;
+        this.offPercentage = 0;
+        this.doesItHaveOff = false;
+        this.discountCode=null;
+        this.discountPercentage=0;
+        this.doesItHaveDiscount=false;
     }
 
     public void setRemainedNumber(int remainedNumber) {
@@ -96,24 +104,59 @@ public class Product {
         allBrands.add(brand);
     }
 
-    public void setDiscountPercentage(double discountPercentage) {
-        this.discountPercentage = discountPercentage;
+
+    public void setOffPercentage(double discountPercentage) {
+        this.offPercentage = discountPercentage;
+    }
+
+    public void setDoesItHaveOff(boolean doesItHaveOff) {
+        this.doesItHaveOff = doesItHaveOff;
+    }
+
+    public void setOff(Off off) {
+        this.off = off;
+    }
+
+    public Off getOff() {
+        return off;
+    }
+
+    public double getOffPercentage() {
+        return offPercentage;
+    }
+
+    public boolean getDoesItHaveOff() {
+        return doesItHaveOff;
+    }
+
+
+    public void setDiscountCode(DiscountCode discountCode) {
+        this.discountCode = discountCode;
     }
 
     public void setDoesItHaveDiscount(boolean doesItHaveDiscount) {
         this.doesItHaveDiscount = doesItHaveDiscount;
     }
 
-    public void setNumberOfView(int numberOfView) {
-        this.numberOfView = numberOfView;
+    public void setDiscountPercentage(double discountPercentage) {
+        this.discountPercentage = discountPercentage;
     }
 
     public double getDiscountPercentage() {
         return discountPercentage;
     }
 
+    public DiscountCode getDiscountCode() {
+        return discountCode;
+    }
+
     public boolean getDoesItHaveDiscount() {
         return doesItHaveDiscount;
+    }
+
+
+    public void setNumberOfView(int numberOfView) {
+        this.numberOfView = numberOfView;
     }
 
     public int getNumberOfView() {
@@ -123,4 +166,6 @@ public class Product {
     public Date getAddProductDate() {
         return addProductDate;
     }
+
+
 }

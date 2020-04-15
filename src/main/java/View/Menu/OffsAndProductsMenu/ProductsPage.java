@@ -1,6 +1,8 @@
 package View.Menu.OffsAndProductsMenu;
 
+import Controller.Controller;
 import View.Menu.Menu;
+import View.Menu.UserArea.UserArea;
 
 import java.util.HashMap;
 
@@ -14,8 +16,20 @@ public class ProductsPage extends Menu {
         subMenus.put("Filtering", new Filtering(this));
         subMenus.put("Sorting", new Sorting(this));
         subMenus.put("Show Product", new ShowProduct(this));
+        subMenus.put("Log In",new UserArea(this));
+        subMenus.put("Log Out",getLogout());
         //bara show Product bayad havasam bashe commond ba id pass bedam
         this.setSubMenus(subMenus);
+    }
+
+    private Menu getLogout() {
+        return new Menu("Logout", this) {
+            @Override
+            public void run(String lastCommand) {
+                Controller.logout();
+                allMenus.get(0).run("");
+            }
+        };
     }
 
     @Override

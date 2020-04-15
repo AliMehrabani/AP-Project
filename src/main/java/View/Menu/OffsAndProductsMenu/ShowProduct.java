@@ -1,7 +1,9 @@
 package View.Menu.OffsAndProductsMenu;
 
 import Controller.Controller;
+import Controller.OffAndProductMenuController;
 import View.Menu.Menu;
+import View.Menu.UserArea.UserArea;
 import View.View;
 
 import java.util.HashMap;
@@ -18,7 +20,7 @@ public class ShowProduct extends Menu {
         long productId = Long.parseLong(lastCommand.split("\\s")[2]);
         String command = scanner.nextLine().trim();
         if (command.equals("digest")) {
-            View.printProductSummery(controller.getProductById(productId));
+            View.printProductSummery(Controller.getProductById(productId));
             //bayad havasm bashe ke controller bayad ye product jadid bi in pas bede
 
             new Digest(this);
@@ -27,21 +29,31 @@ public class ShowProduct extends Menu {
             this.run(lastCommand);
         }
         if (command.equals("attributes")) {
-            View.printAttributes(controller.getProductById(productId));
+            View.printAttributes(Controller.getProductById(productId));
             //bayad havasm bashe ke controller bayad ye product jadid bi in pas bede
 
             this.run(lastCommand);
         }
         if (command.equals("compare [productID]")) {
-            View.printCompareProduct(controller.getProductById(productId), controller.getProductById(Long.parseLong(command.split("\\s")[2])));
+            View.printCompareProduct(Controller.getProductById(productId), Controller.getProductById(Long.parseLong(command.split("\\s")[2])));
             //bayad havasm bashe ke controller bayad ye product jadid bi in pas bede
 
             this.run(lastCommand);
         }
         if (command.equals("Comments")) {
-            new Comments(this);
+            new Comments(this,productId);
             this.run(lastCommand);
         }
+        if (command.equals("log in")){
+            new UserArea(this);
+            this.run(lastCommand);
+        }
+
+        if (command.equals("log Out")){
+            Controller.logout();
+            this.run(lastCommand);
+        }
+
         if (command.equals("back")) {
             this.parentMenu.run(lastCommand);
         }
