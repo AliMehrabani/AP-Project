@@ -1,5 +1,6 @@
 package View.Menu.UserArea.SellerArea;
 
+import Controller.SellerAreaController;
 import View.Menu.Menu;
 
 import java.util.HashMap;
@@ -23,7 +24,7 @@ public class ViewOffs extends Menu {
         return new Menu("View Off", this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewOff(1);
+                SellerAreaController.viewOff(1);
             }
         };
     }
@@ -32,7 +33,7 @@ public class ViewOffs extends Menu {
         return new Menu("Edit Off", this) {
             @Override
             public void run(String lastCommand) {
-                controller.editOff("", "", 1);
+                SellerAreaController.editOff("", "", 1);
                 this.parentMenu.run("");
             }
         };
@@ -42,7 +43,7 @@ public class ViewOffs extends Menu {
         return new Menu("Add Off", this) {
             @Override
             public void run(String lastCommand) {
-                controller.addOff(new String[3]);
+                SellerAreaController.addOff(new String[3]);
                 this.parentMenu.run("");
             }
         };

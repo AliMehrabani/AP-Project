@@ -1,5 +1,6 @@
 package View.Menu.UserArea.ManagerArea;
 
+import Controller.ManagerAreaController;
 import View.Menu.Menu;
 
 public class ManageCategories extends Menu {
@@ -9,11 +10,11 @@ public class ManageCategories extends Menu {
     }
 
     private void doEditCategory(String command) {
-        controller.editCategory("");
+        ManagerAreaController.editCategory("");
     }
 
     private void doAddCategory(String command) {
-        controller.addCategory("");
+        ManagerAreaController.addCategory("");
     }
 
     private void showCategories() {
@@ -25,7 +26,7 @@ public class ManageCategories extends Menu {
         this.showCategories();
         String command = scanner.nextLine().trim();
         if (command.startsWith("remove")) {
-            controller.removeCategory("");
+            ManagerAreaController.removeCategory("");
             this.run("");
         }
         if (command.startsWith("add")) {

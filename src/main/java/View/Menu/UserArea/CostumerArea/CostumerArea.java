@@ -1,5 +1,6 @@
 package View.Menu.UserArea.CostumerArea;
 
+import Controller.CostumerAreaController;
 import View.Menu.Menu;
 import View.Menu.UserArea.ViewPersonalInfo;
 
@@ -38,7 +39,7 @@ public class CostumerArea extends Menu {
         return new Menu("View Discount Codes", this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewCostumerDiscountCodes();
+                CostumerAreaController.viewCostumerDiscountCodes();
                 this.parentMenu.run("");
             }
         };

@@ -1,5 +1,6 @@
 package View.Menu.UserArea.SellerArea;
 
+import Controller.SellerAreaController;
 import View.Menu.Menu;
 import View.Menu.UserArea.ViewPersonalInfo;
 import View.View;
@@ -26,7 +27,7 @@ public class ManageProducts extends Menu {
         return new Menu("view",this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewSellerProducts();
+                SellerAreaController.viewSellerProducts();
                 View.printString("");
                 this.parentMenu.run("");
             }
@@ -37,7 +38,7 @@ public class ManageProducts extends Menu {
         return new Menu("View Buyers", this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewProductBuyers();
+                SellerAreaController.viewProductBuyers();
                 this.parentMenu.run("");
             }
         };
@@ -47,7 +48,7 @@ public class ManageProducts extends Menu {
         return new Menu("Edit", this) {
             @Override
             public void run(String lastCommand) {
-                controller.editProduct("", "", 1);
+                SellerAreaController.editProduct("", "", 1);
                 this.parentMenu.run("");
             }
         };

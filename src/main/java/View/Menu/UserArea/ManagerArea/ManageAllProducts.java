@@ -1,5 +1,6 @@
 package View.Menu.UserArea.ManagerArea;
 
+import Controller.ManagerAreaController;
 import View.Menu.Menu;
 
 public class ManageAllProducts extends Menu {
@@ -17,7 +18,7 @@ public class ManageAllProducts extends Menu {
         this.showAllProducts();
         String command = scanner.nextLine().trim();
         if (command.startsWith("delete")) {
-            controller.deleteProduct(1);
+            ManagerAreaController.deleteProduct(1);
             this.run("");
         }
         if (command.equals("back")) {

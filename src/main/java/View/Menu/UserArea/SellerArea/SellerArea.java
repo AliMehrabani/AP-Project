@@ -1,5 +1,6 @@
 package View.Menu.UserArea.SellerArea;
 
+import Controller.SellerAreaController;
 import View.Menu.Menu;
 import View.Menu.UserArea.CostumerArea.Purchase;
 import View.Menu.UserArea.CostumerArea.ViewCart;
@@ -37,7 +38,7 @@ public class SellerArea extends Menu {
         return new Menu("View Company Information", this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewCompanyInfo();
+                SellerAreaController.viewCompanyInfo();
                 this.parentMenu.run("");
             }
         };
@@ -47,7 +48,7 @@ public class SellerArea extends Menu {
         return new Menu("View Sales History", this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewSalesHistory();
+                SellerAreaController.viewSalesHistory();
                 View.printString("");
                 this.parentMenu.run("");
             }
@@ -58,7 +59,7 @@ public class SellerArea extends Menu {
         return new Menu("Add Product", this) {
             @Override
             public void run(String lastCommand) {
-                controller.addProduct(new String[3]);
+                SellerAreaController.addProduct(new String[3]);
                 this.parentMenu.run("");
             }
         };
@@ -68,7 +69,7 @@ public class SellerArea extends Menu {
         return new Menu("Remove Product", this) {
             @Override
             public void run(String lastCommand) {
-                controller.removeProduct(1);
+                SellerAreaController.removeProduct(1);
                 this.parentMenu.run("");
             }
         };
@@ -78,7 +79,7 @@ public class SellerArea extends Menu {
         return new Menu("Show Categories", this) {
             @Override
             public void run(String lastCommand) {
-                controller.showCategories();
+                SellerAreaController.showCategories();
                 this.parentMenu.run("");
             }
         };

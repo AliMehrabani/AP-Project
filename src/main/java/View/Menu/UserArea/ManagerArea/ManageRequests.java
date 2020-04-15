@@ -1,5 +1,6 @@
 package View.Menu.UserArea.ManagerArea;
 
+import Controller.ManagerAreaController;
 import View.Menu.Menu;
 
 public class ManageRequests extends Menu {
@@ -17,15 +18,15 @@ public class ManageRequests extends Menu {
         this.showRequests();
         String command = scanner.nextLine().trim();
         if (command.startsWith("details")) {
-            controller.requestDetails(1);
+            ManagerAreaController.requestDetails(1);
             this.run("");
         }
         if (command.startsWith("accept")) {
-            controller.acceptRequest(1);
+            ManagerAreaController.acceptRequest(1);
             this.run("");
         }
         if (command.startsWith("decline")) {
-            controller.declineRequest(1);
+            ManagerAreaController.declineRequest(1);
             this.run("");
         }
         if (command.equals("back")) {

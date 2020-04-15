@@ -1,5 +1,6 @@
 package View.Menu.UserArea.ManagerArea;
 
+import Controller.ManagerAreaController;
 import View.Menu.Menu;
 import View.Menu.UserArea.ViewPersonalInfo;
 
@@ -29,7 +30,7 @@ public class ManagerArea extends Menu {
         return new Menu("Create Discount Code", this) {
             @Override
             public void run(String lastCommand) {
-                controller.createDiscountCode(new String[3]);
+                ManagerAreaController.createDiscountCode(new String[3]);
             }
         };
     }

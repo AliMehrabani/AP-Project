@@ -1,5 +1,6 @@
 package View.Menu.UserArea.ManagerArea;
 
+import Controller.ManagerAreaController;
 import View.Menu.Menu;
 
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class ViewDiscountCodes extends Menu {
         return new Menu("View Discount Code", this) {
             @Override
             public void run(String lastCommand) {
-                controller.viewDiscountCode(1);
+                ManagerAreaController.viewDiscountCode(1);
             }
         };
     }
@@ -33,7 +34,7 @@ public class ViewDiscountCodes extends Menu {
         return new Menu("Edit Discount Code", this) {
             @Override
             public void run(String lastCommand) {
-                controller.editDiscountCode(1);
+                ManagerAreaController.editDiscountCode(1);
             }
         };
     }
@@ -42,7 +43,7 @@ public class ViewDiscountCodes extends Menu {
         return new Menu("Remove Discount Code", this) {
             @Override
             public void run(String lastCommand) {
-                controller.removeDiscountCode(1);
+                ManagerAreaController.removeDiscountCode(1);
             }
         };
     }

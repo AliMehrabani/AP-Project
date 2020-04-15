@@ -1,5 +1,6 @@
 package View.Menu.UserArea.CostumerArea;
 
+import Controller.CostumerAreaController;
 import View.Menu.Menu;
 import View.Menu.OffsAndProductsMenu.ShowProduct;
 
@@ -28,7 +29,7 @@ public class ViewCart extends Menu {
         return new Menu("Show Products", this) {
             @Override
             public void run(String lastCommand) {
-                controller.showProducts();
+                CostumerAreaController.showProducts();
                 this.parentMenu.run("");
             }
         };
@@ -38,7 +39,7 @@ public class ViewCart extends Menu {
         return new Menu("Increase Product", this) {
             @Override
             public void run(String lastCommand) {
-                controller.addToCart(null);
+                CostumerAreaController.addToCart(null);
                 this.parentMenu.run("");
             }
         };
@@ -48,7 +49,7 @@ public class ViewCart extends Menu {
         return new Menu("Decrease Product", this) {
             @Override
             public void run(String lastCommand) {
-                controller.removeFromCart(1);
+                CostumerAreaController.removeFromCart(1);
                 this.parentMenu.run("");
             }
         };
@@ -58,7 +59,7 @@ public class ViewCart extends Menu {
         return new Menu("Show Total Price", this) {
             @Override
             public void run(String lastCommand) {
-                controller.getTotalPrice();
+                CostumerAreaController.getTotalPrice();
                 this.parentMenu.run("");
             }
         };
