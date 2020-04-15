@@ -34,7 +34,7 @@ public class Controller {
         currentUser = user;
     }
 
-    public static Product getProductById(long productId) {
+    public static String getProductById(long productId) {
         return null;
     }
 
@@ -42,8 +42,8 @@ public class Controller {
         return false;
     }
 
-    public static User getCurrentUser() {
-        return currentUser;
+    public static String getCurrentUser() {
+        return "";
     }
 
     public static String createAccount(String[] info) {

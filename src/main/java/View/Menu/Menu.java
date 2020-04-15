@@ -1,6 +1,7 @@
 package View.Menu;
 
 import Controller.Controller;
+import Models.Product;
 import View.View;
 
 import java.util.ArrayList;
