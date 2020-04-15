@@ -167,5 +167,11 @@ public class Product {
         return addProductDate;
     }
 
-
+    public ArrayList<String> getAllSellersName() {
+        ArrayList<String>allSellerName=new ArrayList<String>();
+        for (Seller seller : allSellers) {
+            allSellerName.add(seller.getUsername());
+        }
+        return allSellerName;
+    }
 }

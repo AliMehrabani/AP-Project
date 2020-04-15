@@ -1,10 +1,11 @@
 package Controller;
+
 import Models.Category;
 import Models.Product;
-
+import static Controller.DataBase.*;
 import java.util.ArrayList;
 
-import static Controller.DataBase.*;
+
 
 public class OffAndProductMenuController {
 
@@ -135,12 +136,20 @@ public class OffAndProductMenuController {
         //va baghie.
     }
 
-    public static void addComments(Product product, String title, String content) {
+    public static void addCommentsById(long productId, String title, String content) {
         //
     }
 
     public static ArrayList<String> getCategoriesName(){
         return null;
+    }
+
+    public static void addToCartById(long productId){
+        for (Product product : allProduct) {
+            if (product.getProductId()==productId){
+                Controller.addToCart(product);
+            }
+        }
     }
 
 }

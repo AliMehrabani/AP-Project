@@ -11,6 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class Menu {
+    private Product controller;
     private String name;
     protected HashMap<String, Menu> subMenus;
     protected Menu parentMenu;

@@ -6,11 +6,11 @@ import Models.Product;
 import View.Menu.Menu;
 
 public class Comments extends Menu {
-    private Product product;
+    private long productId;
 
     public Comments(Menu parentMenu, long productId) {
         super("Comments", parentMenu);
-        product = Controller.getProductById(productId);
+        this.productId=productId;
     }
 
     @Override
@@ -23,7 +23,7 @@ public class Comments extends Menu {
             title = scanner.nextLine();
             System.out.println("Content:");
             content = scanner.nextLine();
-            OffAndProductMenuController.addComments(product, title, content);
+            OffAndProductMenuController.addCommentsById(productId, title, content);
             this.parentMenu.run(lastCommand);
         }
         if (command.equals("back")) {

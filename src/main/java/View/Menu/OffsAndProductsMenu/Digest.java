@@ -1,7 +1,7 @@
 package View.Menu.OffsAndProductsMenu;
 
 import Controller.Controller;
-import Models.Product;
+import Controller.OffAndProductMenuController;
 import View.Menu.Menu;
 import View.Menu.UserArea.GuestArea;
 import View.Menu.UserArea.UserArea;
@@ -22,8 +22,7 @@ public class Digest extends Menu {
                 new GuestArea(this);
             }
             //havasam bashe ke Guest ham mitone sabad dashte bashe.
-
-            Controller.addToCart(Controller.getProductById(productId));
+            OffAndProductMenuController.addToCartById(productId);
             this.run(lastCommand);
         }
         if (command.equals("select seller [seller_username]")) {

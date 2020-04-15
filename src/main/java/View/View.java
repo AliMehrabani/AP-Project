@@ -1,5 +1,6 @@
 package View;
 
+import Controller.Controller;
 import Models.Category;
 import Models.Product;
 import View.Menu.MainMenu;
@@ -73,15 +74,28 @@ public class View {
         //
     }
 
-    public static void printProductSummery(Product product) {
+    public static void printProductSummery(Long productId,String productName,
+                                           double offPercentage,String explanation,
+                                           double productPrice,String Category,
+                                           double productAverageScore) {
         //
     }
 
-    public static void printAttributes(Product product) {
+    public static void printAttributes(Long productId,String productName,
+                                       double offPercentage,String explanation,
+                                       double productPrice,String Category,
+                                       double productAverageScore,ArrayList<String> allSeller,
+                                       int remainedNumber) {
         //
     }
 
-    public static void printCompareProduct(Product originalProduct, Product compareProduct) {
+    public static void printCompareProduct(String firstProductName, double firstOffPercentage,
+                                           String firstExplanation, double firstProductPrice,
+                                           double firstProductAverageScore,
+
+                                           String secondProductName, double secondOffPercentage,
+                                           String secondExplanation, double secondProductPrice,
+                                           double secondProductAverageScore) {
         //
     }
 
