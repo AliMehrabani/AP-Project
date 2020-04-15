@@ -15,7 +15,7 @@ public class Digest extends Menu {
         long productId = Long.parseLong(lastCommand.split("\\s")[2]);
         String command = scanner.nextLine().trim();
         if (command.equals("add to cart")) {
-            String type=controller.getCurrentUserType();
+            String type= controller.getCurrentUserType();
             if (type.equals("Geust")){
                 new GuestArea(this);
             }

@@ -1,5 +1,6 @@
 package View.Menu.OffsAndProductsMenu;
 
+import Controller.OffAndProductMenuController;
 import View.Menu.Menu;
 import View.View;
 
@@ -10,8 +11,8 @@ public class ShowCategories extends Menu {
 
     @Override
     public void run(String lastCommand) {
-        View.printCategories(controller.getAllCategory());
-        //az OffAndProductMenuController ham mishe gereft
+        View.printCategories(OffAndProductMenuController.getCategoriesName());
+
         this.parentMenu.run(lastCommand);
     }
 

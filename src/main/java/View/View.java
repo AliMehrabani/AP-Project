@@ -12,34 +12,48 @@ public class View {
 
     }
 
-    public static void printAllProduct(ArrayList<Product> products) {
+    public static void printAllProduct(ArrayList<Long> productsId,
+                                       ArrayList<String> productName,
+                                       ArrayList<Double> productPrice,
+                                       ArrayList<Double> offPercentage,
+                                       ArrayList<Boolean> doesItHaveOff) {
         //
     }
 
-    public static void printAllOffProduct(ArrayList<Product> products) {
+    public static void printAllOffProduct(ArrayList<Long> productsId,
+                                          ArrayList<String> productName,
+                                          ArrayList<Double> productPrice,
+                                          ArrayList<Double> offPercentage) {
         //
     }
 
-    public static void printFilterdProduct(ArrayList<Product> products){
-        //
-    }
-    public static void printCurrentFilter(ArrayList<String> filters){
-        //
-    }
-
-    public static void printSortedProduct(ArrayList<Product> products){
-        //
-    }
-
-    public static void printCurrentSort(ArrayList<String> sort){
+    //in ba printAllProduct fargh dare ya na?
+    public static void printFilterdProduct(ArrayList<Long> productsId,
+                                           ArrayList<String> productName,
+                                           ArrayList<Double> productPrice,
+                                           ArrayList<Double> offPercentage,
+                                           ArrayList<Boolean> doesItHaveOff) {
         //
     }
 
-    public static void printOffProduct(ArrayList<Product> products) {
+    public static void printCurrentFilter(ArrayList<String> filters) {
         //
     }
 
-    public static void printCategories(ArrayList<Category> categories) {
+    //in ba printAllProduct fargh dare ya na?
+    public static void printSortedProduct(ArrayList<Long> productsId,
+                                          ArrayList<String> productName,
+                                          ArrayList<Double> productPrice,
+                                          ArrayList<Double> offPercentage,
+                                          ArrayList<Boolean> doesItHaveOff) {
+        //
+    }
+
+    public static void printCurrentSort(ArrayList<String> sort) {
+        /////
+    }
+
+    public static void printCategories(ArrayList<String> categoriesName) {
         //
     }
 

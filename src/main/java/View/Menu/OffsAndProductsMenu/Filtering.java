@@ -1,5 +1,6 @@
 package View.Menu.OffsAndProductsMenu;
 
+import Controller.OffAndProductMenuController;
 import View.Menu.Menu;
 import View.View;
 
@@ -12,28 +13,34 @@ public class Filtering extends Menu {
     public void run(String lastCommand) {
         String command = scanner.nextLine().trim();
         if (command.equals("show available filters")) {
-            View.printAvailableFilters(controller.getAllAvailableFilters());
-            //az OffAndProductMenuController ham mishe gereft
+            View.printAvailableFilters(OffAndProductMenuController.getAllAvailableFilters());
 
             this.run(lastCommand);
         }
         if (command.equals("filter [an available filter]")) {
-            View.printFilterdProduct(controller.filtering(command.split("\\s")[1]));
-            //az OffAndProductMenuController ham mishe gereft
+            OffAndProductMenuController.filtering(command.split("\\s")[1]);
+            //in ye aray liste moratab mide bayad bazesh konam.
+            View.printFilterdProduct(OffAndProductMenuController.getCurrentId(),
+                    OffAndProductMenuController.getCurentName(),
+                    OffAndProductMenuController.getCurrentPrice(),
+                    OffAndProductMenuController.getCurrentOffPercentage(),
+                    OffAndProductMenuController.doesCurrentOff());
 
             this.run(lastCommand);
         }
         if (command.equals("current filters")) {
-            View.printCurrentFilter(controller.getCurrentFilter());
-            //az OffAndProductMenuController ham mishe gereft
+            View.printCurrentFilter(OffAndProductMenuController.getCurrentFilter());
 
             this.run(lastCommand);
         }
         if (command.equals("disable filter [a selected filter]")) {
-            controller.disableFilter(command.split("\\s")[1]);
-            //az OffAndProductMenuController ham mishe gereft
+            OffAndProductMenuController.disableFilter(command.split("\\s")[1]);
 
-            //bayad badesh neshon bedam?
+            View.printFilterdProduct(OffAndProductMenuController.getCurrentId(),
+                    OffAndProductMenuController.getCurentName(),
+                    OffAndProductMenuController.getCurrentPrice(),
+                    OffAndProductMenuController.getCurrentOffPercentage(),
+                    OffAndProductMenuController.doesCurrentOff());
             this.run(lastCommand);
         }
         if (command.equals("back")) {

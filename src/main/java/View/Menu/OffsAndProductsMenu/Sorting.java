@@ -1,5 +1,6 @@
 package View.Menu.OffsAndProductsMenu;
 
+import Controller.OffAndProductMenuController;
 import View.Menu.Menu;
 import View.View;
 
@@ -18,29 +19,34 @@ public class Sorting extends Menu {
     public void run(String lastCommand) {
         String command = scanner.nextLine().trim();
         if (command.equals("show available sorts")) {
-            View.printAvailableSorting(controller.getAllAvailableSorting());
-            //az OffAndProductMenuController ham mishe gereft
-
+            View.printAvailableSorting(OffAndProductMenuController.getAllAvailableSorting());
             this.run(lastCommand);
         }
         if (command.equals("sort [an available sort]")) {
-            View.printSortedProduct(controller.sorting(command.split("\\s")[1]));
-            //az OffAndProductMenuController ham mishe gereft
+            OffAndProductMenuController.sorting(command.split("\\s")[1]);
+
+            View.printSortedProduct(OffAndProductMenuController.getCurrentId(),
+                    OffAndProductMenuController.getCurentName(),
+                    OffAndProductMenuController.getCurrentPrice(),
+                    OffAndProductMenuController.getCurrentOffPercentage(),
+                    OffAndProductMenuController.doesCurrentOff());
 
             this.run(lastCommand);
         }
         if (command.equals("current sort")) {
-            View.printCurrnetSort(controller.getCurrentSort());
-            //az OffAndProductMenuController ham mishe gereft
+            View.printCurrentSort(OffAndProductMenuController.getCurrentSort());
 
             this.run(lastCommand);
         }
         if (command.equals("disable sort")) {
-            controller.disableSort(command.split("\\s")[2]);
-            //az OffAndProductMenuController ham mishe gereft
+            OffAndProductMenuController.disableSort(command.split("\\s")[2]);
 
-            //bayad havasam bashe chi ro disable mikonam
-            //bayad neshom bedam?
+            View.printSortedProduct(OffAndProductMenuController.getCurrentId(),
+                    OffAndProductMenuController.getCurentName(),
+                    OffAndProductMenuController.getCurrentPrice(),
+                    OffAndProductMenuController.getCurrentOffPercentage(),
+                    OffAndProductMenuController.doesCurrentOff());
+
             this.run(lastCommand);
         }
         if (command.equals("back")) {

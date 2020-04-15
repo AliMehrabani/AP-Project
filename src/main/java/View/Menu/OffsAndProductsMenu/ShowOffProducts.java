@@ -1,5 +1,6 @@
 package View.Menu.OffsAndProductsMenu;
 
+import Controller.OffAndProductMenuController;
 import View.Menu.Menu;
 import View.View;
 
@@ -10,7 +11,10 @@ public class ShowOffProducts extends Menu {
 
     @Override
     public void run(String lastCommand) {
-        View.printAllOffProduct(controller.getAllOffProduct());
+        View.printAllOffProduct(OffAndProductMenuController.getId(),
+                                OffAndProductMenuController.getName(),
+                                OffAndProductMenuController.getPrice(),
+                                OffAndProductMenuController.getOffPercentage());
         this.parentMenu.run(lastCommand);
     }
 }

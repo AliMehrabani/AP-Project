@@ -1,13 +1,15 @@
 package View.Menu.OffsAndProductsMenu;
 
+import Controller.OffAndProductMenuController;
 import Models.Product;
 import View.Menu.Menu;
 
 public class Comments extends Menu {
     private Product product;
 
-    public Comments(Menu parentMenu) {
+    public Comments(Menu parentMenu, long productId) {
         super("Comments", parentMenu);
+        product = controller.getProductById(productId);
     }
 
     @Override
@@ -20,7 +22,7 @@ public class Comments extends Menu {
             title = scanner.nextLine();
             System.out.println("Content:");
             content = scanner.nextLine();
-            controller.addComments(product, title, content);
+            OffAndProductMenuController.addComments(product, title, content);
             this.parentMenu.run(lastCommand);
         }
         if (command.equals("back")) {

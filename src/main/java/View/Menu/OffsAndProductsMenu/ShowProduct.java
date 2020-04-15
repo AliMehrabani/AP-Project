@@ -1,6 +1,6 @@
 package View.Menu.OffsAndProductsMenu;
 
-import Controller.Controller;
+import Controller.OffAndProductMenuController;
 import View.Menu.Menu;
 import View.View;
 
@@ -39,7 +39,7 @@ public class ShowProduct extends Menu {
             this.run(lastCommand);
         }
         if (command.equals("Comments")) {
-            new Comments(this);
+            new Comments(this,productId);
             this.run(lastCommand);
         }
         if (command.equals("back")) {
