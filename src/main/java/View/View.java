@@ -17,6 +17,8 @@ public class View {
                                        ArrayList<Double> productPrice,
                                        ArrayList<Double> offPercentage,
                                        ArrayList<Boolean> doesItHaveOff) {
+
+
         //
     }
 

@@ -13,12 +13,12 @@ public class SellLog extends Log {
     private DeliveryStatus deliveryStatus;
 
     public SellLog(double receivedAmount, double reducedAmountForSale, ArrayList<Product> soldProduct,
-                   String buyerName, DeliveryStatus deliveryStatus, long logId, Date logDate) {
+                   String buyerName,long logId, Date logDate) {
         this.receivedAmount = receivedAmount;
         this.reducedAmountForSale = reducedAmountForSale;
         this.soldProduct = soldProduct;
         this.buyerName = buyerName;
-        this.deliveryStatus = deliveryStatus;
+        this.deliveryStatus =DeliveryStatus.DELIVERY_IN_PROGRESS;
         this.logId = logId;
         this.logDate = logDate;
     }

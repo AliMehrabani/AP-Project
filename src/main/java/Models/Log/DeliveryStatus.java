@@ -1,7 +1,7 @@
 package Models.Log;
 
 public enum DeliveryStatus {
-    delivered,
-    deliveryInProgress,
-    preparingForDeliver
+    DELIVERED,
+    DELIVERY_IN_PROGRESS,
+    PREPARING_FOR_DELIVER
 }

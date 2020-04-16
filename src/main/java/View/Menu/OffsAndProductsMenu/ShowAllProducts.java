@@ -11,11 +11,11 @@ public class ShowAllProducts extends Menu {
 
     @Override
     public void run(String lastCommand) {
-        View.printAllProduct(OffAndProductMenuController.getId(),
-                OffAndProductMenuController.getName(),
-                OffAndProductMenuController.getPrice(),
-                OffAndProductMenuController.getOffPercentage(),
-                OffAndProductMenuController.doesItOff());
+        View.printAllProduct(OffAndProductMenuController.getCurrentId(),
+                OffAndProductMenuController.getCurentName(),
+                OffAndProductMenuController.getCurrentPrice(),
+                OffAndProductMenuController.getCurrentOffPercentage(),
+                OffAndProductMenuController.doesCurrentOff());
         this.parentMenu.run(lastCommand);
     }
 }

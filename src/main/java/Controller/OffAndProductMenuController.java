@@ -101,16 +101,12 @@ public class OffAndProductMenuController {
         return allCategories;
     }
 
-    public static ArrayList<Product> filtering(String filter) {
+    public static ArrayList<Product> filtering(String filter,String Type) {
         Filter.filterByBrand("");
         // va baghie.
 
         //bayad havasam bashe shayad chnta filter yoho On bokone.
         return null;
-    }
-
-    public static ArrayList<String> getCurrentFilter() {
-        return Filter.showCurrentFilters();
     }
 
     public static void disableFilter(String filter) {
@@ -122,7 +118,6 @@ public class OffAndProductMenuController {
     }
 
     public static ArrayList<Product> sorting(String sort) {
-        Sort.sortByView();
         //va baghie
         return null;
     }
