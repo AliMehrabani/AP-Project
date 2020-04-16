@@ -1,6 +1,8 @@
 package Controller;
 
 
+import Models.Product;
+
 import java.util.ArrayList;
 
 
@@ -107,6 +109,10 @@ public class Filter {
     public static ArrayList<String> showAvailableSorts() {
         ArrayList<String> availableFilters = new ArrayList<>();
         return availableFilters;
+    }
+
+    public static void findProductByName(String productName){
+         //
     }
 
 }

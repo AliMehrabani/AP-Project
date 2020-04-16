@@ -1,5 +1,6 @@
 package View.Menu.OffsAndProductsMenu;
 
+import Controller.Filter;
 import Controller.OffAndProductMenuController;
 import View.Menu.Menu;
 import View.View;
@@ -20,7 +21,7 @@ public class Filtering extends Menu {
         if (command.equals("filter [an available filter]")) {
             OffAndProductMenuController.filtering(command.split("\\s")[1]);
             //in ye aray liste moratab mide bayad bazesh konam.
-            View.printFilterdProduct(OffAndProductMenuController.getCurrentId(),
+            View.printFilteredProduct(OffAndProductMenuController.getCurrentId(),
                     OffAndProductMenuController.getCurentName(),
                     OffAndProductMenuController.getCurrentPrice(),
                     OffAndProductMenuController.getCurrentOffPercentage(),
@@ -36,13 +37,27 @@ public class Filtering extends Menu {
         if (command.equals("disable filter [a selected filter]")) {
             OffAndProductMenuController.disableFilter(command.split("\\s")[1]);
 
-            View.printFilterdProduct(OffAndProductMenuController.getCurrentId(),
+            View.printFilteredProduct(OffAndProductMenuController.getCurrentId(),
                     OffAndProductMenuController.getCurentName(),
                     OffAndProductMenuController.getCurrentPrice(),
                     OffAndProductMenuController.getCurrentOffPercentage(),
                     OffAndProductMenuController.doesCurrentOff());
             this.run(lastCommand);
         }
+
+        //bayad toye filtering bashe?albate mitone bashe daste khodemone
+        if (command.equals("search for []")){
+            String productName=command.split("\\s")[2];
+            Filter.findProductByName(productName);
+            View.printFilteredProduct(OffAndProductMenuController.getCurrentId(),
+                    OffAndProductMenuController.getCurentName(),
+                    OffAndProductMenuController.getCurrentPrice(),
+                    OffAndProductMenuController.getCurrentOffPercentage(),
+                    OffAndProductMenuController.doesCurrentOff());
+
+            this.run(lastCommand);
+        }
+
         if (command.equals("back")) {
             this.parentMenu.run(lastCommand);
         }

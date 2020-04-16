@@ -28,11 +28,11 @@ public class View {
     }
 
     //in ba printAllProduct fargh dare ya na?
-    public static void printFilterdProduct(ArrayList<Long> productsId,
-                                           ArrayList<String> productName,
-                                           ArrayList<Double> productPrice,
-                                           ArrayList<Double> offPercentage,
-                                           ArrayList<Boolean> doesItHaveOff) {
+    public static void printFilteredProduct(ArrayList<Long> productsId,
+                                            ArrayList<String> productName,
+                                            ArrayList<Double> productPrice,
+                                            ArrayList<Double> offPercentage,
+                                            ArrayList<Boolean> doesItHaveOff) {
         //
     }
 
