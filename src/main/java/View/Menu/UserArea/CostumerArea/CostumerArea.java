@@ -58,7 +58,7 @@ public class CostumerArea extends Menu {
     }
 
     public void showSpecifications() {
-        Controller.getCurrentUser();
+        Controller.getCurrentUserSpecifications();
     }
 
     @Override

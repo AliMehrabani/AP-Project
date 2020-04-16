@@ -52,7 +52,7 @@ public class ViewOffs extends Menu {
     }
 
     private void showOffs(){
-
+        SellerAreaController.showOffs();
     }
 
     private Menu getLogout() {

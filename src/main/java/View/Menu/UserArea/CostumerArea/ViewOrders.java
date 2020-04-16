@@ -1,6 +1,7 @@
 package View.Menu.UserArea.CostumerArea;
 
 import Controller.Controller;
+import Controller.CostumerAreaController;
 import View.Menu.Menu;
 
 public class ViewOrders extends Menu {
@@ -22,7 +23,7 @@ public class ViewOrders extends Menu {
     }
 
     private void rateProduct(long productId, int score) {
-
+        CostumerAreaController.rateProduct(productId, score);
     }
 
     private void showOrders(){

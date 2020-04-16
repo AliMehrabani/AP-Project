@@ -48,7 +48,7 @@ public class ManagerArea extends Menu {
     }
 
     public void showSpecifications() {
-        Controller.getCurrentUser();
+        Controller.getCurrentUserSpecifications();
     }
 
     @Override

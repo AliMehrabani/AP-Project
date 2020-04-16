@@ -1,6 +1,10 @@
 package Controller;
 
 import Models.DiscountCode;
+import Models.User.Manager;
+
+import java.util.ArrayList;
+import java.util.concurrent.atomic.DoubleAccumulator;
 
 public class ManagerAreaController {
 
@@ -35,31 +39,44 @@ public class ManagerAreaController {
 
     }
 
-    public static void requestDetails(long requestID) {
-        //manager class is not complete
+    public static String requestDetails(long requestID) {
+        return "";
     }
 
     public static void acceptRequest(long requestID) {
-
+        Manager manager = (Manager) Controller.currentUser;
+        manager.answerRequest("accept", 1);
     }
 
     public static void declineRequest(long requestID) {
-
+        Manager manager = (Manager) Controller.currentUser;
+        manager.answerRequest("decline", 1);
     }
 
     public static void editCategory(String name) {
-
+        DataBase.getCategoryByName(name);
     }
 
     public static void addCategory(String name) {
-
+        DataBase.addCategory(name);
     }
 
     public static void removeCategory(String name) {
-
+        DataBase.removeCategory("");
     }
 
     public static String viewDiscountCode(long discountCode) {
         return "";
+    }
+
+    public static ArrayList<String> showAllProducts() {
+        DataBase.allProducts.get(1);
+        return null;
+    }
+
+    public static ArrayList<String> showRequests() {
+        Manager manager = (Manager) Controller.currentUser;
+        manager.getAllActiveRequests();
+        return null;
     }
 }

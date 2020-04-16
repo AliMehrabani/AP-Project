@@ -13,16 +13,6 @@ public class ViewPersonalInfo extends Menu {
 
     }
 
-    private Menu getLogout() {
-        return new Menu("Logout", this) {
-            @Override
-            public void run(String lastCommand) {
-                Controller.logout();
-                allMenus.get(0).run("");
-            }
-        };
-    }
-
     @Override
     public void run(String lastCommand) {
         this.showPersonalInfo();

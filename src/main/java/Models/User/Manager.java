@@ -25,6 +25,10 @@ public class Manager extends User {
         return null;
     }
 
+    public static ArrayList<Request> getAllActiveRequests() {
+        return allActiveRequests;
+    }
+
     public static void addDiscountCode(DiscountCode discountCode) {}
 
     public static void  editDiscountCode() {

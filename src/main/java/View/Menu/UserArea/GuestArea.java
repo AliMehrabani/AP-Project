@@ -22,7 +22,7 @@ public class GuestArea extends Menu {
             public void run(String lastCommand) {
                 Controller.hasUserWithUsername("");
                 Controller.isPasswordCorrect("");
-                View.printString(Controller.loginAccount("", ""));
+                View.printString(Controller.loginAccount(""));
                 this.parentMenu.run(lastCommand);
             }
         };

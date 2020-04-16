@@ -15,7 +15,7 @@ public class OffAndProductMenuController {
 
     public static ArrayList<String> getName(){
         ArrayList<String> productName=new ArrayList<String>();
-        for (Product product : allProduct) {
+        for (Product product : allProducts) {
             productName.add(product.getName());
         }
         return productName;
@@ -31,7 +31,7 @@ public class OffAndProductMenuController {
 
     public static ArrayList<Long> getId(){
         ArrayList<Long> productId=new ArrayList<Long>();
-        for (Product product : allProduct) {
+        for (Product product : allProducts) {
             productId.add(product.getProductId());
         }
         return productId;
@@ -47,7 +47,7 @@ public class OffAndProductMenuController {
 
     public static ArrayList<Double> getOffPercentage(){
         ArrayList<Double> productOffPercentage=new ArrayList<Double>();
-        for (Product product : allProduct) {
+        for (Product product : allProducts) {
             productOffPercentage.add(product.getOffPercentage());
         }
         return productOffPercentage;
@@ -63,7 +63,7 @@ public class OffAndProductMenuController {
 
     public static ArrayList<Double> getPrice(){
         ArrayList<Double> productPrice=new ArrayList<Double>();
-        for (Product product : allProduct) {
+        for (Product product : allProducts) {
             productPrice.add(product.getPrice());
         }
         return productPrice;
@@ -79,7 +79,7 @@ public class OffAndProductMenuController {
 
     public static ArrayList<Boolean> doesItOff(){
         ArrayList<Boolean> isIfOff=new ArrayList<Boolean>();
-        for (Product product : allProduct) {
+        for (Product product : allProducts) {
             isIfOff.add(product.getDoesItHaveOff());
         }
         return isIfOff;
@@ -98,7 +98,7 @@ public class OffAndProductMenuController {
     }
 
     public static ArrayList<Category> getAllCategory() {
-        return allCategory;
+        return allCategories;
     }
 
     public static ArrayList<Product> filtering(String filter) {
@@ -145,7 +145,7 @@ public class OffAndProductMenuController {
     }
 
     public static void addToCartById(long productId){
-        for (Product product : allProduct) {
+        for (Product product : allProducts) {
             if (product.getProductId()==productId){
                 Controller.addToCart(product);
             }

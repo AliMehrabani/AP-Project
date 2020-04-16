@@ -11,7 +11,7 @@ public class ManageRequests extends Menu {
     }
 
     private void showRequests() {
-
+        ManagerAreaController.showRequests();
     }
 
     @Override

@@ -108,7 +108,7 @@ public class SellerArea extends Menu {
     }
 
     public void showSpecifications() {
-        Controller.getCurrentUser();
+        Controller.getCurrentUserSpecifications();
     }
 
     @Override

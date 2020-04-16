@@ -4,8 +4,10 @@ import Controller.Controller;
 import Models.Category;
 import Models.Product;
 import View.Menu.MainMenu;
+import View.Menu.Menu;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class View {
 
@@ -106,6 +108,7 @@ public class View {
     }
 
     public static void run() {
+        Menu.setScanner(new Scanner(System.in));
         new MainMenu().run("");
     }
 }

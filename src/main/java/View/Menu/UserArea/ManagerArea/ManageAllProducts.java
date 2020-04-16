@@ -11,7 +11,7 @@ public class ManageAllProducts extends Menu {
     }
 
     private void showAllProducts() {
-        //Controller.getAllProduct();
+        ManagerAreaController.showAllProducts();
     }
 
     @Override

@@ -12,7 +12,7 @@ import Models.User.User;
 import static Controller.DataBase.*;
 
 public class Controller {
-    private static User currentUser;
+    public static User currentUser;
     private static boolean hasHeadManager;
 
     public Controller() {
@@ -35,6 +35,7 @@ public class Controller {
     }
 
     public static String getProductById(long productId) {
+        DataBase.getProductById(productId);
         return null;
     }
 
@@ -42,19 +43,23 @@ public class Controller {
         return false;
     }
 
-    public static String getCurrentUser() {
+    public static String getCurrentUserSpecifications() {
         return "";
     }
 
     public static String createAccount(String[] info) {
+        DataBase.addNewUser(null);
         return "";
     }
 
-    public static String loginAccount(String username, String password) {
+    public static String loginAccount(String username) {
+        DataBase.getUserByUsername(username);
+        setCurrentUser(null);
         return "";
     }
 
     public static double getBalance() {
+
         return 0;
     }
 
@@ -63,11 +68,15 @@ public class Controller {
     }
 
     public static void addToCart(Product product) {
-        cart.add(product);
+
         //check beshe.
     }
 
     public static void logout() {
+        setCurrentUser(new Guest());
+    }
 
+    public static boolean hasDiscountCode(String code) {
+        return false;
     }
 }

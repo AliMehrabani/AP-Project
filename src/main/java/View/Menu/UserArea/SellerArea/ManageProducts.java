@@ -40,7 +40,7 @@ public class ManageProducts extends Menu {
         return new Menu("View Buyers", this) {
             @Override
             public void run(String lastCommand) {
-                SellerAreaController.viewProductBuyers();
+                SellerAreaController.viewProductBuyers(1);
                 this.parentMenu.run("");
             }
         };
