@@ -2,7 +2,6 @@ package Models.User;
 
 import Models.Product;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Guest extends User {

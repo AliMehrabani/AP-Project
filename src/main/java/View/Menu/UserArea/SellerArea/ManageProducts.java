@@ -3,7 +3,6 @@ package View.Menu.UserArea.SellerArea;
 import Controller.Controller;
 import Controller.SellerAreaController;
 import View.Menu.Menu;
-import View.Menu.UserArea.ViewPersonalInfo;
 import View.View;
 
 import java.util.HashMap;

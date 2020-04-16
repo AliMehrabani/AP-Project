@@ -1,15 +1,10 @@
 package Controller;
 
-import Models.Category;
-import Models.DiscountCode;
 import Models.Product;
-
-import java.util.ArrayList;
 
 import Models.User.Guest;
 import Models.User.User;
 
-import static Controller.DataBase.*;
 
 public class Controller {
     public static User currentUser;

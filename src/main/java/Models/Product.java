@@ -15,6 +15,7 @@ public class Product {
     private Category parentCategory;
     private String explanation;
     private double averageScore;
+    private ArrayList<Score> allScores;
     private ArrayList<Comment> allComments;
 
     private enum productStatus {REVIEWFORMAKE, REVIEWFOREDIT, ACCEPTED}
@@ -42,12 +43,14 @@ public class Product {
         this.productId = productId;
         this.price = price;
         this.parentCategory = parentCategory;
-        this.off=null;
+        this.off = null;
         this.offPercentage = 0;
         this.doesItHaveOff = false;
-        this.discountCode=null;
-        this.discountPercentage=0;
-        this.doesItHaveDiscount=false;
+        this.discountCode = null;
+        this.discountPercentage = 0;
+        this.doesItHaveDiscount = false;
+        this.averageScore = 0;
+        this.allScores = new ArrayList<>();
     }
 
     public void setRemainedNumber(int remainedNumber) {
@@ -92,6 +95,10 @@ public class Product {
 
     public ArrayList<Comment> getAllComments() {
         return allComments;
+    }
+
+    public void addScore(Score score) {
+        this.allScores.add(score);
     }
 
     public void addSeller(Seller seller) {

@@ -1,8 +1,5 @@
 package View;
 
-import Controller.Controller;
-import Models.Category;
-import Models.Product;
 import View.Menu.MainMenu;
 import View.Menu.Menu;
 

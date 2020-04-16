@@ -1,8 +1,6 @@
 package View.Menu.OffsAndProductsMenu;
 
-import Controller.Controller;
 import Controller.OffAndProductMenuController;
-import Models.Product;
 import View.Menu.Menu;
 
 public class Comments extends Menu {

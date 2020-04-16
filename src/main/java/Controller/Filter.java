@@ -1,11 +1,8 @@
 package Controller;
 
-import Models.Category;
-import Models.Product;
 
 import java.util.ArrayList;
 
-import static Controller.DataBase.*;
 
 public class Filter {
 

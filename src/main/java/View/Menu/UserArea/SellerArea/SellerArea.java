@@ -3,13 +3,8 @@ package View.Menu.UserArea.SellerArea;
 import Controller.Controller;
 import Controller.SellerAreaController;
 import View.Menu.Menu;
-import View.Menu.UserArea.CostumerArea.Purchase;
-import View.Menu.UserArea.CostumerArea.ViewCart;
-import View.Menu.UserArea.CostumerArea.ViewOrders;
-import View.Menu.UserArea.ManagerArea.ManageUsers;
 import View.Menu.UserArea.ViewPersonalInfo;
 import View.View;
-import com.sun.jdi.event.MethodEntryEvent;
 
 import java.util.HashMap;
 

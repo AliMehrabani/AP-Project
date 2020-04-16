@@ -4,7 +4,6 @@ import Models.DiscountCode;
 import Models.User.Manager;
 
 import java.util.ArrayList;
-import java.util.concurrent.atomic.DoubleAccumulator;
 
 public class ManagerAreaController {
 
