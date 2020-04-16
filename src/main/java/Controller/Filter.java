@@ -107,6 +107,11 @@ public class Filter {
         return availableFilters;
     }
 
+
+    public static ArrayList<String> getCurrentFilter() {
+        return Filter.showCurrentFilters();
+    }
+
     public static void findProductByName(String productName){
          //
     }

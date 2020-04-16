@@ -13,12 +13,12 @@ public class BuyLog extends Log {
     private ReceiveStatus receiveStatus;
 
     public BuyLog(double paidAmount, int saleCodeApplied, ArrayList<Product> boughtProduct,
-                  String sellerName, ReceiveStatus receiveStatus, long logId, Date logDate) {
+                  String sellerName, long logId, Date logDate) {
         this.paidAmount = paidAmount;
         this.saleCodeApplied = saleCodeApplied;
         this.boughtProduct = boughtProduct;
         this.sellerName = sellerName;
-        this.receiveStatus = receiveStatus;
+        this.receiveStatus=ReceiveStatus.RECEIVED_IN_PROGRESS;
         this.logId = logId;
         this.logDate = logDate;
     }

@@ -19,7 +19,8 @@ public class Filtering extends Menu {
             this.run(lastCommand);
         }
         if (command.equals("filter [an available filter]")) {
-            OffAndProductMenuController.filtering(command.split("\\s")[1]);
+            String Type="";
+            OffAndProductMenuController.filtering(command.split("\\s")[1],Type);
             //in ye aray liste moratab mide bayad bazesh konam.
             View.printFilteredProduct(OffAndProductMenuController.getCurrentId(),
                     OffAndProductMenuController.getCurentName(),
@@ -30,7 +31,7 @@ public class Filtering extends Menu {
             this.run(lastCommand);
         }
         if (command.equals("current filters")) {
-            View.printCurrentFilter(OffAndProductMenuController.getCurrentFilter());
+            View.printCurrentFilter(Filter.getCurrentFilter());
 
             this.run(lastCommand);
         }
