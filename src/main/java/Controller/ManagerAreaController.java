@@ -79,4 +79,9 @@ public class ManagerAreaController {
         manager.getAllActiveRequests();
         return null;
     }
+
+    public static ArrayList<String> showAllUsers() {
+        DataBase.allUsers.get(0);
+        return null;
+    }
 }

@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public abstract class Request {
     private static ArrayList<Request> allRequests = new ArrayList<>();
     protected String managerAnswer;
-    protected long requestID;
+    protected long requestId;
 
     public Request() {
         this.managerAnswer = null;
-        this.requestID = allRequests.size() + 1;
+        this.requestId = allRequests.size() + 1;
         allRequests.add(this);
     }
 
@@ -21,8 +21,8 @@ public abstract class Request {
         return managerAnswer;
     }
 
-    public long getRequestID() {
-        return requestID;
+    public long getRequestId() {
+        return requestId;
     }
 
     public abstract String getType();

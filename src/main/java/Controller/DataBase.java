@@ -7,6 +7,7 @@ import Models.User.User;
 import java.util.ArrayList;
 
 public class DataBase {
+    static ArrayList<User> allUsers = new ArrayList<>();
     static ArrayList<Product> allProducts = new ArrayList<>();
     static ArrayList<Category> allCategories = new ArrayList<>();
     static ArrayList<String> allAvailableFilters = new ArrayList<>();

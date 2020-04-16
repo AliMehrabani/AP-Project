@@ -6,13 +6,15 @@ public class Category {
     private String name;
     private String specialAttribute;
     private ArrayList<Category> subCategories;
-    private ArrayList<Product> allProduct;
+    private Category parentCategory;
+    private ArrayList<Product> allProducts;
 
     public Category(String name, String specialAttribute) {
         this.name = name;
         this.specialAttribute = specialAttribute;
         subCategories = new ArrayList<>();
-        allProduct = new ArrayList<Product>();
+        allProducts = new ArrayList<Product>();
+        this.parentCategory = null;
     }
 
     public String getName() {
@@ -32,11 +34,19 @@ public class Category {
     }
 
     public void addProduct(Product product){
-        allProduct.add(product);
+        allProducts.add(product);
     }
 
     public void removeProduct(Product product){
-        allProduct.remove(product);
+        allProducts.remove(product);
+    }
+
+    public Category getParentCategory() {
+        return parentCategory;
+    }
+
+    public void setParentCategory(Category parentCategory) {
+        this.parentCategory = parentCategory;
     }
 
     public void addSubCategory(Category category){

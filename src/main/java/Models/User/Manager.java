@@ -17,11 +17,11 @@ public class Manager extends User {
 
     }
 
-    public static Request getRequestByID(long ID) {
+    public static Request getRequestById(long Id) {
         return null;
     }
 
-    public static DiscountCode getDiscountCodeByID(long ID) {
+    public static DiscountCode getDiscountCodeById(long Id) {
         return null;
     }
 
@@ -34,10 +34,6 @@ public class Manager extends User {
     public static void  editDiscountCode() {
 
     }
-
-    public void addCategory(){}
-
-    public void editCategory() {}
 
     @Override
     public String getType() {

@@ -76,7 +76,7 @@ public class ManageUsers extends Menu {
     }
 
     private void showUsers() {
-
+        ManagerAreaController.showAllUsers();
     }
 
     @Override

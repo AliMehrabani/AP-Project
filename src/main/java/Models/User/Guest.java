@@ -13,7 +13,15 @@ public class Guest extends User {
         this.cart = new HashMap<>();
     }
 
-    public void addProduct(Product product){}
+    public void addProductToCart(Product product){}
+
+    public HashMap<Product, Integer> getCart() {
+        return cart;
+    }
+
+    public void removeProductFromCart(Product product) {
+
+    }
 
     @Override
     public String getType() {

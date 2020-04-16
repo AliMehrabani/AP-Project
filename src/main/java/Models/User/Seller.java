@@ -50,6 +50,10 @@ public class Seller extends User {
 
     }
 
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
     @Override
     public String getType() {
         return "Seller";
