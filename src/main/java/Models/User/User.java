@@ -5,15 +5,15 @@ public abstract class User {
     private String username;
     private String firstName;
     private String lastName;
-    private String eMail;
+    private String EMail;
     private long phoneNumber;
     private String password;
 
-    public User(String username, String firstName, String lastName, String eMail, long phoneNumber, String password) {
+    public User(String username, String firstName, String lastName, String EMail, long phoneNumber, String password) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.eMail = eMail;
+        this.EMail = EMail;
         this.phoneNumber = phoneNumber;
         this.password = password;
     }
@@ -31,7 +31,7 @@ public abstract class User {
     }
 
     public String getEMail() {
-        return eMail;
+        return EMail;
     }
 
     public long getPhoneNumber() {
@@ -51,7 +51,7 @@ public abstract class User {
     }
 
     public void setEMail(String eMail) {
-        this.eMail = eMail;
+        this.EMail = eMail;
     }
 
     public void setPhoneNumber(long phoneNumber) {

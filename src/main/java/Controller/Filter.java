@@ -1,10 +1,6 @@
 package Controller;
 
-
-import Models.Product;
-
 import java.util.ArrayList;
-
 
 public class Filter {
 
